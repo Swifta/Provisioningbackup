@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="credential" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}credentials" minOccurs="0"/>
  *         &lt;element name="securityquestionanswer" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="identificationno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankdomain" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="bankdomainid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="currency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
     "credential",
     "securityquestionanswer",
     "identificationno",
-    "bankdomain",
+    "bankdomainid",
     "currency"
 })
 public class Activation {
@@ -45,7 +45,7 @@ public class Activation {
     protected Credentials credential;
     protected String securityquestionanswer;
     protected String identificationno;
-    protected String bankdomain;
+    protected String bankdomainid;
     protected String currency;
 
     /**
@@ -145,27 +145,27 @@ public class Activation {
     }
 
     /**
-     * Gets the value of the bankdomain property.
+     * Gets the value of the bankdomainid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBankdomain() {
-        return bankdomain;
+    public String getBankdomainid() {
+        return bankdomainid;
     }
 
     /**
-     * Sets the value of the bankdomain property.
+     * Sets the value of the bankdomainid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBankdomain(String value) {
-        this.bankdomain = value;
+    public void setBankdomainid(String value) {
+        this.bankdomainid = value;
     }
 
     /**

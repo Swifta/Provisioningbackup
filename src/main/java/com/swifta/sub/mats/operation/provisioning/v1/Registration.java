@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="bankaccount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="clearingnumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="accountholderdetails" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}accountholderdetails" minOccurs="0"/>
- *         &lt;element name="currency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bankdomainname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="currencyid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="bankdomainnameid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="termscondition" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="securityquestions" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}securityquestions" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -48,8 +48,8 @@ import javax.xml.bind.annotation.XmlType;
     "bankaccount",
     "clearingnumber",
     "accountholderdetails",
-    "currency",
-    "bankdomainname",
+    "currencyid",
+    "bankdomainnameid",
     "termscondition",
     "securityquestions"
 })
@@ -63,8 +63,8 @@ public class Registration {
     protected String bankaccount;
     protected String clearingnumber;
     protected Accountholderdetails accountholderdetails;
-    protected String currency;
-    protected String bankdomainname;
+    protected String currencyid;
+    protected String bankdomainnameid;
     protected String termscondition;
     protected List<Securityquestions> securityquestions;
 
@@ -245,51 +245,51 @@ public class Registration {
     }
 
     /**
-     * Gets the value of the currency property.
+     * Gets the value of the currencyid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCurrency() {
-        return currency;
+    public String getCurrencyid() {
+        return currencyid;
     }
 
     /**
-     * Sets the value of the currency property.
+     * Sets the value of the currencyid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCurrency(String value) {
-        this.currency = value;
+    public void setCurrencyid(String value) {
+        this.currencyid = value;
     }
 
     /**
-     * Gets the value of the bankdomainname property.
+     * Gets the value of the bankdomainnameid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBankdomainname() {
-        return bankdomainname;
+    public String getBankdomainnameid() {
+        return bankdomainnameid;
     }
 
     /**
-     * Sets the value of the bankdomainname property.
+     * Sets the value of the bankdomainnameid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBankdomainname(String value) {
-        this.bankdomainname = value;
+    public void setBankdomainnameid(String value) {
+        this.bankdomainnameid = value;
     }
 
     /**

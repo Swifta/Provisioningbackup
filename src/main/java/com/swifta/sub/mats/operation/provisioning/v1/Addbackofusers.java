@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="msisdn" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="profile" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="profileid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlType;
     "username",
     "msisdn",
     "email",
-    "profile"
+    "profileid"
 })
 public class Addbackofusers {
 
@@ -46,7 +46,7 @@ public class Addbackofusers {
     protected String username;
     protected String msisdn;
     protected String email;
-    protected String profile;
+    protected String profileid;
 
     /**
      * Gets the value of the firstname property.
@@ -169,27 +169,27 @@ public class Addbackofusers {
     }
 
     /**
-     * Gets the value of the profile property.
+     * Gets the value of the profileid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getProfile() {
-        return profile;
+    public String getProfileid() {
+        return profileid;
     }
 
     /**
-     * Sets the value of the profile property.
+     * Sets the value of the profileid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setProfile(String value) {
-        this.profile = value;
+    public void setProfileid(String value) {
+        this.profileid = value;
     }
 
 }

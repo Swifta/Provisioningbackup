@@ -5,7 +5,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
-import com.swifta.sub.mats.operation.provisioning.v1_0.*;
+
 
 /**
  * This object contains factory methods for each 
@@ -49,6 +49,7 @@ public class ObjectFactory {
     private final static QName _AddprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addprofileResponse");
     private final static QName _EditbackofusersResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "editbackofusersResponse");
     private final static QName _Addglobalsetting_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addglobalsetting");
+    private final static QName _SetdefaultaccountResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "setdefaultaccountResponse");
     private final static QName _AddaccountResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addaccountResponse");
     private final static QName _Addbackofusers_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addbackofusers");
     private final static QName _AddtransferCountmessagetoaccountprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addtransferCountmessagetoaccountprofile");
@@ -61,18 +62,20 @@ public class ObjectFactory {
     private final static QName _ActivationResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "activationResponse");
     private final static QName _AddaccounttoexistinguserResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addaccounttoexistinguserResponse");
     private final static QName _Addprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addprofile");
-    private final static QName _ConnectaccountrequestResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "connectaccountrequestResponse");
+    private final static QName _Setdefaultaccount_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "setdefaultaccount");
     private final static QName _Suspendaccountholder_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "suspendaccountholder");
     private final static QName _Addthresholdtouserprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addthresholdtouserprofile");
     private final static QName _AddtransferCounttoaccountprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addtransferCounttoaccountprofileResponse");
     private final static QName _ResetpasswordResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "resetpasswordResponse");
+    private final static QName _Setparentaccount_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "setparentaccount");
     private final static QName _Editbackofusers_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "editbackofusers");
     private final static QName _SpecifybalancingtypetoaccountprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "specifybalancingtypetoaccountprofileResponse");
     private final static QName _AddtransferCounttoaccountprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addtransferCounttoaccountprofile");
     private final static QName _ChangepasswordResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "changepasswordResponse");
+    private final static QName _LinkaccountrequestResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "linkaccountrequestResponse");
+    private final static QName _SetparentaccountResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "setparentaccountResponse");
     private final static QName _Changepassword_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "changepassword");
     private final static QName _DisconnectaccountResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "disconnectaccountResponse");
-    private final static QName _Connectaccountrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "connectaccountrequest");
     private final static QName _IsProfileauthorised_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "isProfileauthorised");
     private final static QName _GetProfileofUserResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "getProfileofUserResponse");
     private final static QName _Resetpassword_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "resetpassword");
@@ -88,13 +91,14 @@ public class ObjectFactory {
     private final static QName _Addservicetouserprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addservicetouserprofile");
     private final static QName _DeletebackofusersResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "deletebackofusersResponse");
     private final static QName _AddtransferCountmessagetouserprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addtransferCountmessagetouserprofileResponse");
+    private final static QName _Linkaccountrequest_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "linkaccountrequest");
     private final static QName _Authenticate_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "authenticate");
     private final static QName _AddpermissionstouserprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addpermissionstouserprofileResponse");
     private final static QName _AddthresholdtoaccountprofileResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addthresholdtoaccountprofileResponse");
     private final static QName _AddtransferCountmessagetouserprofile_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addtransferCountmessagetouserprofile");
-    private final static QName _ConnectaccountrequestresponseStatuscode_QNAME = new QName("", "statuscode");
-    private final static QName _ConnectaccountrequestresponseExtensionparameters_QNAME = new QName("", "extensionparameters");
-    private final static QName _ConnectaccountrequestresponseResponsemessage_QNAME = new QName("", "responsemessage");
+    private final static QName _SuspendaccountholderrequestresponseStatuscode_QNAME = new QName("", "statuscode");
+    private final static QName _SuspendaccountholderrequestresponseExtensionparameters_QNAME = new QName("", "extensionparameters");
+    private final static QName _SuspendaccountholderrequestresponseResponsemessage_QNAME = new QName("", "responsemessage");
     private final static QName _AddaccountrequestresponseAccountnumber_QNAME = new QName("", "accountnumber");
 
     /**
@@ -177,6 +181,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SetdefaultaccountResponse }
+     * 
+     */
+    public SetdefaultaccountResponse createSetdefaultaccountResponse() {
+        return new SetdefaultaccountResponse();
+    }
+
+    /**
      * Create an instance of {@link EditbackofusersResponse }
      * 
      */
@@ -236,8 +248,8 @@ public class ObjectFactory {
      * Create an instance of {@link IsProfileauthorisedResponse }
      * 
      */
-    public Isprofileauthorisedresponse createIsProfileauthorisedResponse() {
-        return new Isprofileauthorisedresponse();
+    public IsProfileauthorisedResponse createIsProfileauthorisedResponse() {
+        return new IsProfileauthorisedResponse();
     }
 
     /**
@@ -409,6 +421,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Linkaccountrequest }
+     * 
+     */
+    public Linkaccountrequest createLinkaccountrequest() {
+        return new Linkaccountrequest();
+    }
+
+    /**
      * Create an instance of {@link DeletebackofusersResponse }
      * 
      */
@@ -508,16 +528,8 @@ public class ObjectFactory {
      * Create an instance of {@link GetProfileofUserResponse }
      * 
      */
-    public Getprofileofuserresponse createGetProfileofUserResponse() {
-        return new Getprofileofuserresponse();
-    }
-
-    /**
-     * Create an instance of {@link Connectaccountrequest }
-     * 
-     */
-    public Connectaccountrequest createConnectaccountrequest() {
-        return new Connectaccountrequest();
+    public GetProfileofUserResponse createGetProfileofUserResponse() {
+        return new GetProfileofUserResponse();
     }
 
     /**
@@ -542,6 +554,22 @@ public class ObjectFactory {
      */
     public Changepassword createChangepassword() {
         return new Changepassword();
+    }
+
+    /**
+     * Create an instance of {@link SetparentaccountResponse }
+     * 
+     */
+    public SetparentaccountResponse createSetparentaccountResponse() {
+        return new SetparentaccountResponse();
+    }
+
+    /**
+     * Create an instance of {@link LinkaccountrequestResponse }
+     * 
+     */
+    public LinkaccountrequestResponse createLinkaccountrequestResponse() {
+        return new LinkaccountrequestResponse();
     }
 
     /**
@@ -577,6 +605,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Setparentaccount }
+     * 
+     */
+    public Setparentaccount createSetparentaccount() {
+        return new Setparentaccount();
+    }
+
+    /**
      * Create an instance of {@link Addthresholdtouserprofile }
      * 
      */
@@ -601,19 +637,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Setdefaultaccount }
+     * 
+     */
+    public Setdefaultaccount createSetdefaultaccount() {
+        return new Setdefaultaccount();
+    }
+
+    /**
      * Create an instance of {@link Suspendaccountholder }
      * 
      */
     public Suspendaccountholder createSuspendaccountholder() {
         return new Suspendaccountholder();
-    }
-
-    /**
-     * Create an instance of {@link ConnectaccountrequestResponse }
-     * 
-     */
-    public Connectaccountrequestresponse createConnectaccountrequestResponse() {
-        return new Connectaccountrequestresponse();
     }
 
     /**
@@ -657,6 +693,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Getuserprofileresponse }
+     * 
+     */
+    public Getuserprofileresponse createGetuserprofileresponse() {
+        return new Getuserprofileresponse();
+    }
+
+    /**
+     * Create an instance of {@link Linkaccountresponse }
+     * 
+     */
+    public Linkaccountresponse createLinkaccountresponse() {
+        return new Linkaccountresponse();
+    }
+
+    /**
      * Create an instance of {@link Registrationrequestresponse }
      * 
      */
@@ -665,35 +717,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Getprofileofuserresponse }
-     * 
-     */
-    public Getprofileofuserresponse createGetprofileofuserresponse() {
-        return new Getprofileofuserresponse();
-    }
-
-    /**
      * Create an instance of {@link Extension }
      * 
      */
     public Extension createExtension() {
         return new Extension();
-    }
-
-    /**
-     * Create an instance of {@link Credentials }
-     * 
-     */
-    public Credentials createCredentials() {
-        return new Credentials();
-    }
-
-    /**
-     * Create an instance of {@link Authenticationresponse }
-     * 
-     */
-    public Authenticationresponse createAuthenticationresponse() {
-        return new Authenticationresponse();
     }
 
     /**
@@ -777,19 +805,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Isprofileauthorisedresponse }
+     * Create an instance of {@link Credentials }
      * 
      */
-    public Isprofileauthorisedresponse createIsprofileauthorisedresponse() {
-        return new Isprofileauthorisedresponse();
+    public Credentials createCredentials() {
+        return new Credentials();
     }
 
     /**
-     * Create an instance of {@link Connectaccountrequestresponse }
+     * Create an instance of {@link SetDefaultaccountrequestresponse }
      * 
      */
-    public Connectaccountrequestresponse createConnectaccountrequestresponse() {
-        return new Connectaccountrequestresponse();
+    public SetDefaultaccountrequestresponse createSetDefaultaccountrequestresponse() {
+        return new SetDefaultaccountrequestresponse();
+    }
+
+    /**
+     * Create an instance of {@link Authenticationresponse }
+     * 
+     */
+    public Authenticationresponse createAuthenticationresponse() {
+        return new Authenticationresponse();
+    }
+
+    /**
+     * Create an instance of {@link Isprofileathresponse }
+     * 
+     */
+    public Isprofileathresponse createIsprofileathresponse() {
+        return new Isprofileathresponse();
     }
 
     /**
@@ -949,8 +993,8 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "isProfileauthorisedResponse")
-    public JAXBElement<Isprofileauthorisedresponse> createIsProfileauthorisedResponse(Isprofileauthorisedresponse value) {
-        return new JAXBElement<Isprofileauthorisedresponse>(_IsProfileauthorisedResponse_QNAME, Isprofileauthorisedresponse.class, null, value);
+    public JAXBElement<IsProfileauthorisedResponse> createIsProfileauthorisedResponse(IsProfileauthorisedResponse value) {
+        return new JAXBElement<IsProfileauthorisedResponse>(_IsProfileauthorisedResponse_QNAME, IsProfileauthorisedResponse.class, null, value);
     }
 
     /**
@@ -1023,6 +1067,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "addglobalsetting")
     public JAXBElement<Addglobalsetting> createAddglobalsetting(Addglobalsetting value) {
         return new JAXBElement<Addglobalsetting>(_Addglobalsetting_QNAME, Addglobalsetting.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetdefaultaccountResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "setdefaultaccountResponse")
+    public JAXBElement<SetdefaultaccountResponse> createSetdefaultaccountResponse(SetdefaultaccountResponse value) {
+        return new JAXBElement<SetdefaultaccountResponse>(_SetdefaultaccountResponse_QNAME, SetdefaultaccountResponse.class, null, value);
     }
 
     /**
@@ -1134,12 +1187,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConnectaccountrequestResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Setdefaultaccount }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "connectaccountrequestResponse")
-    public JAXBElement<Connectaccountrequestresponse> createConnectaccountrequestResponse(Connectaccountrequestresponse value) {
-        return new JAXBElement<Connectaccountrequestresponse>(_ConnectaccountrequestResponse_QNAME, Connectaccountrequestresponse.class, null, value);
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "setdefaultaccount")
+    public JAXBElement<Setdefaultaccount> createSetdefaultaccount(Setdefaultaccount value) {
+        return new JAXBElement<Setdefaultaccount>(_Setdefaultaccount_QNAME, Setdefaultaccount.class, null, value);
     }
 
     /**
@@ -1179,6 +1232,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Setparentaccount }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "setparentaccount")
+    public JAXBElement<Setparentaccount> createSetparentaccount(Setparentaccount value) {
+        return new JAXBElement<Setparentaccount>(_Setparentaccount_QNAME, Setparentaccount.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Editbackofusers }{@code >}}
      * 
      */
@@ -1215,6 +1277,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link LinkaccountrequestResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "linkaccountrequestResponse")
+    public JAXBElement<LinkaccountrequestResponse> createLinkaccountrequestResponse(LinkaccountrequestResponse value) {
+        return new JAXBElement<LinkaccountrequestResponse>(_LinkaccountrequestResponse_QNAME, LinkaccountrequestResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetparentaccountResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "setparentaccountResponse")
+    public JAXBElement<SetparentaccountResponse> createSetparentaccountResponse(SetparentaccountResponse value) {
+        return new JAXBElement<SetparentaccountResponse>(_SetparentaccountResponse_QNAME, SetparentaccountResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Changepassword }{@code >}}
      * 
      */
@@ -1233,15 +1313,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Connectaccountrequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "connectaccountrequest")
-    public JAXBElement<Connectaccountrequest> createConnectaccountrequest(Connectaccountrequest value) {
-        return new JAXBElement<Connectaccountrequest>(_Connectaccountrequest_QNAME, Connectaccountrequest.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link IsProfileauthorised }{@code >}}
      * 
      */
@@ -1255,8 +1326,8 @@ public class ObjectFactory {
      * 
      */
     @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "getProfileofUserResponse")
-    public JAXBElement<Getprofileofuserresponse> createGetProfileofUserResponse(Getprofileofuserresponse value) {
-        return new JAXBElement<Getprofileofuserresponse>(_GetProfileofUserResponse_QNAME, Getprofileofuserresponse.class, null, value);
+    public JAXBElement<GetProfileofUserResponse> createGetProfileofUserResponse(GetProfileofUserResponse value) {
+        return new JAXBElement<GetProfileofUserResponse>(_GetProfileofUserResponse_QNAME, GetProfileofUserResponse.class, null, value);
     }
 
     /**
@@ -1377,6 +1448,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Linkaccountrequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", name = "linkaccountrequest")
+    public JAXBElement<Linkaccountrequest> createLinkaccountrequest(Linkaccountrequest value) {
+        return new JAXBElement<Linkaccountrequest>(_Linkaccountrequest_QNAME, Linkaccountrequest.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Authenticate }{@code >}}
      * 
      */
@@ -1416,36 +1496,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Connectaccountrequestresponse.class)
-    public JAXBElement<StatusCode> createConnectaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Connectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Connectaccountrequestresponse.class)
-    public JAXBElement<ParameterExtension> createConnectaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Connectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Connectaccountrequestresponse.class)
-    public JAXBElement<String> createConnectaccountrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_ConnectaccountrequestresponseResponsemessage_QNAME, String.class, Connectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<StatusCode> createSuspendaccountholderrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Suspendaccountholderrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Suspendaccountholderrequestresponse.class, value);
     }
 
     /**
@@ -1454,7 +1507,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<ParameterExtension> createSuspendaccountholderrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Suspendaccountholderrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Suspendaccountholderrequestresponse.class, value);
     }
 
     /**
@@ -1463,34 +1516,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "responsemessage", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<String> createSuspendaccountholderrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_ConnectaccountrequestresponseResponsemessage_QNAME, String.class, Suspendaccountholderrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<StatusCode> createDisconnectaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Disconnectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<ParameterExtension> createDisconnectaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Disconnectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<String> createDisconnectaccountrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_ConnectaccountrequestresponseResponsemessage_QNAME, String.class, Disconnectaccountrequestresponse.class, value);
+        return new JAXBElement<String>(_SuspendaccountholderrequestresponseResponsemessage_QNAME, String.class, Suspendaccountholderrequestresponse.class, value);
     }
 
     /**
@@ -1499,7 +1525,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccountrequestresponse.class)
     public JAXBElement<StatusCode> createAddaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Addaccountrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Addaccountrequestresponse.class, value);
     }
 
     /**
@@ -1508,7 +1534,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccountrequestresponse.class)
     public JAXBElement<ParameterExtension> createAddaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccountrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccountrequestresponse.class, value);
     }
 
     /**
@@ -1524,9 +1550,63 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Linkaccountresponse.class)
+    public JAXBElement<StatusCode> createLinkaccountresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Linkaccountresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Linkaccountresponse.class)
+    public JAXBElement<ParameterExtension> createLinkaccountresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Linkaccountresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Linkaccountresponse.class)
+    public JAXBElement<String> createLinkaccountresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SuspendaccountholderrequestresponseResponsemessage_QNAME, String.class, Linkaccountresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = SetDefaultaccountrequestresponse.class)
+    public JAXBElement<StatusCode> createSetDefaultaccountrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, SetDefaultaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = SetDefaultaccountrequestresponse.class)
+    public JAXBElement<ParameterExtension> createSetDefaultaccountrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, SetDefaultaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = SetDefaultaccountrequestresponse.class)
+    public JAXBElement<String> createSetDefaultaccountrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SuspendaccountholderrequestresponseResponsemessage_QNAME, String.class, SetDefaultaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccounttoexistinguserrequestresponse.class)
     public JAXBElement<StatusCode> createAddaccounttoexistinguserrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Addaccounttoexistinguserrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Addaccounttoexistinguserrequestresponse.class, value);
     }
 
     /**
@@ -1535,7 +1615,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccounttoexistinguserrequestresponse.class)
     public JAXBElement<ParameterExtension> createAddaccounttoexistinguserrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccounttoexistinguserrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccounttoexistinguserrequestresponse.class, value);
     }
 
     /**
@@ -1551,9 +1631,36 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<StatusCode> createDisconnectaccountrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<ParameterExtension> createDisconnectaccountrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<String> createDisconnectaccountrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SuspendaccountholderrequestresponseResponsemessage_QNAME, String.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = Registrationrequestresponse.class)
     public JAXBElement<StatusCode> createRegistrationrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_ConnectaccountrequestresponseStatuscode_QNAME, StatusCode.class, Registrationrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SuspendaccountholderrequestresponseStatuscode_QNAME, StatusCode.class, Registrationrequestresponse.class, value);
     }
 
     /**
@@ -1562,7 +1669,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Registrationrequestresponse.class)
     public JAXBElement<ParameterExtension> createRegistrationrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_ConnectaccountrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Registrationrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SuspendaccountholderrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Registrationrequestresponse.class, value);
     }
 
     /**
@@ -1571,7 +1678,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "responsemessage", scope = Registrationrequestresponse.class)
     public JAXBElement<String> createRegistrationrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_ConnectaccountrequestresponseResponsemessage_QNAME, String.class, Registrationrequestresponse.class, value);
+        return new JAXBElement<String>(_SuspendaccountholderrequestresponseResponsemessage_QNAME, String.class, Registrationrequestresponse.class, value);
     }
 
 }

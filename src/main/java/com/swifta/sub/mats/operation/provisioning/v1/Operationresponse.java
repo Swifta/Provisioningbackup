@@ -36,15 +36,16 @@ import javax.xml.bind.annotation.XmlType;
     "parameterextension"
 })
 @XmlSeeAlso({
+    Getuserprofileresponse.class,
+    Linkaccountresponse.class,
     Registrationrequestresponse.class,
-    Getprofileofuserresponse.class,
-    Authenticationresponse.class,
     Activationrequestresponse.class,
     Disconnectaccountrequestresponse.class,
     Addaccountrequestresponse.class,
     Suspendaccountholderrequestresponse.class,
-    Isprofileauthorisedresponse.class,
-    Connectaccountrequestresponse.class,
+    SetDefaultaccountrequestresponse.class,
+    Authenticationresponse.class,
+    Isprofileathresponse.class,
     Addaccounttoexistinguserrequestresponse.class
 })
 public abstract class Operationresponse {
