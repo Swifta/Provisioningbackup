@@ -12,6 +12,14 @@ import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkaccountrespons
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkaccountresponses;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.LinkaccountresponsesE;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkccountrequest;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountrequest;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponse;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponses;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.SetdefaultaccountresponsesE;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentrequest;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentresponse;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentresponses;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.SetparentresponsesE;
 import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
 
 public class AccountHolderService {
@@ -34,6 +42,44 @@ public class AccountHolderService {
 		Linkaccountresponse[] linkResponseArray = linkAccountResponse
 				.getLinkaccountresponse();
 		for (Linkaccountresponse singleResponse : linkResponseArray) {
+			statusMessage = singleResponse.getStatusMessage();
+		}
+		return statusMessage;
+	}
+
+	public String setParentRequest(String childUsername, String parentUsername)
+			throws RemoteException, DataServiceFault {
+		String statusMessage = "";
+		matsStub = new MatsdataserviceStub();
+		Setparentrequest setParentRequest = new Setparentrequest();
+		setParentRequest.setChilduserresourceid(childUsername);
+		setParentRequest.setParentuserresourceid(parentUsername);
+		SetparentresponsesE setParentResponses = matsStub
+				.setparentrequest(setParentRequest);
+		Setparentresponses parentResponses = setParentResponses
+				.getSetparentresponses();
+		Setparentresponse[] parentResponseArray = parentResponses
+				.getSetparentresponse();
+		for (Setparentresponse singleResponse : parentResponseArray) {
+			statusMessage = singleResponse.getStatusMessage();
+		}
+		return statusMessage;
+	}
+
+	public String setdefaultaccountrequest(String childUsername,
+			String parentUsername) throws RemoteException, DataServiceFault {
+		matsStub = new MatsdataserviceStub();
+		String statusMessage = "";
+		Setdefaultaccountrequest setdefaultaccountrequest = new Setdefaultaccountrequest();
+		setdefaultaccountrequest.setChilduserresourceid(childUsername);
+		setdefaultaccountrequest.setParentaccountresourceid(parentUsername);
+		SetdefaultaccountresponsesE defaultAccountResponses = matsStub
+				.setdefaultaccountrequest(setdefaultaccountrequest);
+		Setdefaultaccountresponses defaultResponses = defaultAccountResponses
+				.getSetdefaultaccountresponses();
+		Setdefaultaccountresponse[] defaultResponseArray = defaultResponses
+				.getSetdefaultaccountresponse();
+		for (Setdefaultaccountresponse singleResponse : defaultResponseArray) {
 			statusMessage = singleResponse.getStatusMessage();
 		}
 		return statusMessage;
