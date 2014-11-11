@@ -117,19 +117,38 @@ public class AccountHolderService {
 	public String setdefaultaccountrequest(String childUsername,
 			String parentUsername) throws RemoteException, DataServiceFault {
 		matsStub = new MatsdataserviceStub();
+		logger.info("---------------Instantiate stub service class");
 		String statusMessage = "";
 		Setdefaultaccountrequest setdefaultaccountrequest = new Setdefaultaccountrequest();
 		setdefaultaccountrequest.setChilduserresourceid(childUsername);
 		setdefaultaccountrequest.setParentaccountresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for Setdefaultaccountrequest");
 		SetdefaultaccountresponsesE defaultAccountResponses = matsStub
 				.setdefaultaccountrequest(setdefaultaccountrequest);
-		Setdefaultaccountresponses defaultResponses = defaultAccountResponses
-				.getSetdefaultaccountresponses();
-		Setdefaultaccountresponse[] defaultResponseArray = defaultResponses
-				.getSetdefaultaccountresponse();
-		for (Setdefaultaccountresponse singleResponse : defaultResponseArray) {
-			statusMessage = singleResponse.getStatusMessage();
+		if (defaultAccountResponses != null) {
+			logger.info("---------------After getting SetdefaultaccountresponsesE class");
+			Setdefaultaccountresponses defaultResponses = defaultAccountResponses
+					.getSetdefaultaccountresponses();
+			if (defaultResponses != null) {
+				logger.info("---------------After getting Setdefaultaccountresponses class");
+				Setdefaultaccountresponse[] defaultResponseArray = defaultResponses
+						.getSetdefaultaccountresponse();
+				if (defaultResponseArray != null) {
+					logger.info("---------------After getting Setdefaultaccountresponse[] class");
+					for (Setdefaultaccountresponse singleResponse : defaultResponseArray) {
+						statusMessage = singleResponse.getStatusMessage();
+						logger.info("---------------After Iterating Setdefaultaccountresponse[] class");
+					}
+				} else {
+					logger.info("---------------After getting Setdefaultaccountresponse[] class and its null");
+				}
+			} else {
+				logger.info("---------------After getting Setdefaultaccountresponses class and its null");
+			}
+		} else {
+			logger.info("---------------After getting SetdefaultaccountresponsesE class and its null");
 		}
+		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
 	}
 
@@ -137,6 +156,7 @@ public class AccountHolderService {
 			String securityAnswer, String identificaitonNo, String bankNo,
 			String currency) throws RemoteException, DataServiceFault {
 		matsStub = new MatsdataserviceStub();
+		logger.info("---------------Instantiate stub service class");
 		String statusMessage = "";
 		Activationrequest activationRequest = new Activationrequest();
 		activationRequest.setUsername(username);
@@ -146,15 +166,34 @@ public class AccountHolderService {
 		activationRequest.setSecurityquestionanswer(securityAnswer);
 		activationRequest.setIdentificationno(identificaitonNo);
 		activationRequest.setFirstpassword(credential.getFirstpin());
+		logger.info("---------------After setting the parameters for Activationrequest");
 		ActivationresponsesE activationResponses = matsStub
 				.activationrequest(activationRequest);
-		Activationresponses activationResponse = activationResponses
-				.getActivationresponses();
-		Activationresponse[] response = activationResponse
-				.getActivationresponse();
-		for (Activationresponse singleResponse : response) {
-			statusMessage = singleResponse.getStatusMessage();
+		if (activationResponses != null) {
+			logger.info("---------------After getting ActivationresponsesE class");
+			Activationresponses activationResponse = activationResponses
+					.getActivationresponses();
+			if (activationResponse != null) {
+				logger.info("---------------After getting Activationresponses class");
+				Activationresponse[] response = activationResponse
+						.getActivationresponse();
+				if (response != null) {
+					logger.info("---------------After getting Activationresponse[] class");
+					for (Activationresponse singleResponse : response) {
+						statusMessage = singleResponse.getStatusMessage();
+						logger.info("---------------After Iterating Activationresponse[] class");
+					}
+				} else {
+					logger.info("---------------After getting Activationresponse[] class and its null");
+				}
+			} else {
+				logger.info("---------------After getting Activationresponses class and its null");
+			}
+		} else {
+			logger.info("---------------After getting ActivationresponsesE class and its null");
+
 		}
+		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
 	}
 
