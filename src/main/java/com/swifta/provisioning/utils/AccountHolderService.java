@@ -80,18 +80,37 @@ public class AccountHolderService {
 			throws RemoteException, DataServiceFault {
 		String statusMessage = "";
 		matsStub = new MatsdataserviceStub();
+		logger.info("---------------Instantiate stub service class");
 		Setparentrequest setParentRequest = new Setparentrequest();
 		setParentRequest.setChilduserresourceid(childUsername);
 		setParentRequest.setParentuserresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for setParentRequest");
 		SetparentresponsesE setParentResponses = matsStub
 				.setparentrequest(setParentRequest);
-		Setparentresponses parentResponses = setParentResponses
-				.getSetparentresponses();
-		Setparentresponse[] parentResponseArray = parentResponses
-				.getSetparentresponse();
-		for (Setparentresponse singleResponse : parentResponseArray) {
-			statusMessage = singleResponse.getStatusMessage();
+		if (setParentResponses != null) {
+			logger.info("---------------After getting SetparentresponsesE class");
+			Setparentresponses parentResponses = setParentResponses
+					.getSetparentresponses();
+			if (parentResponses != null) {
+				logger.info("---------------After getting Setparentresponses class");
+				Setparentresponse[] parentResponseArray = parentResponses
+						.getSetparentresponse();
+				if (parentResponseArray != null) {
+					logger.info("---------------After getting Setparentresponse[] class");
+					for (Setparentresponse singleResponse : parentResponseArray) {
+						statusMessage = singleResponse.getStatusMessage();
+						logger.info("---------------After Iterating Setparentresponse[] class");
+					}
+				} else {
+					logger.info("---------------After getting Setparentresponse[] class and its null");
+				}
+			} else {
+				logger.info("---------------After getting Setparentresponses class and its null");
+			}
+		} else {
+			logger.info("---------------After getting SetparentresponsesE class and its null");
 		}
+		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
 	}
 
