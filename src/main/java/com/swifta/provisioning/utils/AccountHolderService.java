@@ -25,9 +25,9 @@ import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
 
-	public String linkAccount(String childUsername, String parentUsername,
-			int profileId, String reason) throws RemoteException,
-			DataServiceFault {
+	public String linkccountrequest(String childUsername,
+			String parentUsername, int profileId, String reason)
+			throws RemoteException, DataServiceFault {
 		String statusMessage = "";
 		matsStub = new MatsdataserviceStub();
 		Linkccountrequest linkAccountRequest = new Linkccountrequest();
