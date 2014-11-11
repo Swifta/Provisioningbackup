@@ -8,7 +8,12 @@ import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Activationrequest;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Activationresponse;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Activationresponses;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.ActivationresponsesE;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registration;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registrationresponse;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registrationresponses;
+import com.swifta.sub.mats.operation.data.MatsdataserviceStub.RegistrationresponsesE;
 import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
+import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
 
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
@@ -36,5 +41,119 @@ public class AccountHolderService {
 			statusMessage = singleResponse.getStatusMessage();
 		}
 		return statusMessage;
+	}
+
+	public String registerUser(
+			com.swifta.sub.mats.operation.provisioning.v1.Accountholderdetails AccountHolderDetails,
+			String bankAccount,
+			int bankcodeid,
+			int bankDomainid,
+			String clearingNumber,
+			int currencyid,
+			String email,
+			String msisdn,
+			int profileid,
+			java.util.List<com.swifta.sub.mats.operation.provisioning.v1.Securityquestions> securityquestions,
+			String termscondition, String username) throws RemoteException,
+			DataServiceFault {
+		matsStub = new MatsdataserviceStub();
+		Registration registration8 = new Registration();
+		String securityQues = "";
+		String securityAns = "";
+		String statusMessage = "";
+		String Message = "";
+
+		registration8.setBankaccount(bankAccount);
+		registration8.setBankcodeid(bankcodeid);
+		registration8.setBankdomainid(bankDomainid);
+		registration8.setCity(AccountHolderDetails.getAddress().getCity());
+		registration8.setClearingnumber(clearingNumber);
+		registration8.setCountryid(AccountHolderDetails.getCountryid());
+		registration8.setCountrystateid(AccountHolderDetails.getStateid());
+		registration8.setCountrystatelgaid(AccountHolderDetails.getLgaid());
+		registration8.setCurrencyid(currencyid);
+		registration8.setDateofbirth(AccountHolderDetails.getDateofbirth()
+				.toString());
+		registration8.setEmail(email);
+		registration8.setEmployer(AccountHolderDetails.getEmployer());
+		registration8.setExpirydate(AccountHolderDetails.getIdentification()
+				.getExpirydate().toString());
+		registration8.setFirstname(AccountHolderDetails.getFirstname());
+		registration8.setGenderid(AccountHolderDetails.getGenderid());
+		registration8.setIdentificationnumber(AccountHolderDetails
+				.getIdentification().getIdentificationNo());
+		// registration8.setIdentificationtypeid();
+		registration8.setIsssuer(AccountHolderDetails.getIdentification()
+				.getIssuer());
+		registration8.setIssueDate(AccountHolderDetails.getIdentification()
+				.getIssueDate());
+		registration8.setLanguageid(AccountHolderDetails.getLanguageid());
+		registration8.setLastname(AccountHolderDetails.getLastname());
+		registration8.setMiddlename(AccountHolderDetails.getMiddlename());
+		registration8.setMsisdn(msisdn);
+		registration8.setOccupation(AccountHolderDetails.getOccupation());
+		registration8.setPostalCode(AccountHolderDetails.getAddress()
+				.getPostalCode());
+		registration8.setPrefix(AccountHolderDetails.getPrefix());
+		registration8.setPrimarycontactemail(AccountHolderDetails
+				.getPrimarycontact().getEmail());
+		registration8.setPrimarycontactmobilenumber(AccountHolderDetails
+				.getPrimarycontact().getMobilenumber());
+		registration8.setPrimarycontactname(AccountHolderDetails
+				.getPrimarycontact().getName());
+		registration8.setPrimarycontactphonenumber(AccountHolderDetails
+				.getPrimarycontact().getPhonenumber());
+		registration8.setProfileid(profileid);
+		registration8.setProvince(AccountHolderDetails.getAddress()
+				.getProvince());
+		registration8.setSecondarycontactemail(AccountHolderDetails
+				.getSecondarycontact().getEmail());
+		registration8.setSecondarycontactmobilenumber(AccountHolderDetails
+				.getSecondarycontact().getMobilenumber());
+		registration8.setSecondarycontactname(AccountHolderDetails
+				.getSecondarycontact().getName());
+		registration8.setSecondarycontactphonenumber(AccountHolderDetails
+				.getSecondarycontact().getPhonenumber());
+		if (securityquestions != null) {
+			for (Securityquestions singleResponse : securityquestions) {
+				securityQues = singleResponse.getQuestion();
+				securityAns = singleResponse.getAnswer();
+			}
+		}
+
+		registration8.setSecurityquestionanswer(securityQues);
+		registration8.setSecurityquestions(securityQues);
+		// registration8.setStatusMessage();
+		registration8.setStreetaddress(AccountHolderDetails.getAddress()
+				.getStreetaddress());
+		registration8.setSuffix(AccountHolderDetails.getSuffix());
+		registration8.setTermscondition(termscondition);
+		registration8.setUsername(username);
+
+		RegistrationresponsesE response = matsStub.registration(registration8);
+		if (response != null) {
+			Registrationresponses response2 = response
+					.getRegistrationresponses();
+			if (response2 != null) {
+				Registrationresponse[] response3 = response2
+						.getRegistrationresponse();
+				if (response3 != null) {
+					for (Registrationresponse singleResponse : response3) {
+						Message = singleResponse.getStatusMessage();
+					}
+					statusMessage = Message;
+				} else {
+					statusMessage = "Response is empty";
+				}
+
+			} else {
+				statusMessage = "Response is empty";
+			}
+		} else {
+			statusMessage = "Response is empty";
+		}
+
+		return statusMessage;
+
 	}
 }
