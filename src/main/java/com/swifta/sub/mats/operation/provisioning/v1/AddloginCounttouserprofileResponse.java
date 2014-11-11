@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for addloginCountuserprofileResponse complex type.
+ * <p>Java class for addloginCounttouserprofileResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="addloginCountuserprofileResponse">
+ * &lt;complexType name="addloginCounttouserprofileResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "addloginCountuserprofileResponse", propOrder = {
+@XmlType(name = "addloginCounttouserprofileResponse", propOrder = {
     "_return"
 })
-public class AddloginCountuserprofileResponse {
+public class AddloginCounttouserprofileResponse {
 
     @XmlElement(name = "return")
     protected Operationresponse _return;

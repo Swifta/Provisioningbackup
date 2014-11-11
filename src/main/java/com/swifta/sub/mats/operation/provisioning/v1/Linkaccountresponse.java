@@ -12,12 +12,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for disconnectaccountrequestresponse complex type.
+ * <p>Java class for linkaccountresponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="disconnectaccountrequestresponse">
+ * &lt;complexType name="linkaccountresponse">
  *   &lt;complexContent>
  *     &lt;extension base="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse">
  *       &lt;sequence>
@@ -33,10 +33,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "disconnectaccountrequestresponse", propOrder = {
+@XmlType(name = "linkaccountresponse", propOrder = {
     "rest"
 })
-public class Disconnectaccountrequestresponse
+public class Linkaccountresponse
     extends Operationresponse
 {
 
@@ -53,7 +53,7 @@ public class Disconnectaccountrequestresponse
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Responsemessage" is used by two different parts of a schema. See: 
-     * line 576 of file:/Volumes/NO%20NAME/Provisioning.wsdl
+     * line 196 of file:/Volumes/NO%20NAME/Provisioning.wsdl
      * line 106 of file:/Volumes/NO%20NAME/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
@@ -75,9 +75,9 @@ public class Disconnectaccountrequestresponse
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
+     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * 
      * 
      */

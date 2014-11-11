@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for authenticationresponse complex type.
+ * <p>Java class for isprofileathresponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authenticationresponse">
+ * &lt;complexType name="isprofileathresponse">
  *   &lt;complexContent>
  *     &lt;extension base="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse">
  *       &lt;sequence>
@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authenticationresponse", propOrder = {
+@XmlType(name = "isprofileathresponse", propOrder = {
     "responseMessage",
     "extension"
 })
-public class Authenticationresponse
+public class Isprofileathresponse
     extends Operationresponse
 {
 

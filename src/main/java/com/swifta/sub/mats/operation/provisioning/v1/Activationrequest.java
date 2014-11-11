@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for activation complex type.
+ * <p>Java class for activationrequest complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="activation">
+ * &lt;complexType name="activationrequest">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "activation", propOrder = {
+@XmlType(name = "activationrequest", propOrder = {
     "resourceid",
     "credential",
     "securityquestionanswer",
@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
     "bankdomainid",
     "currency"
 })
-public class Activation {
+public class Activationrequest {
 
     protected String resourceid;
     protected Credentials credential;

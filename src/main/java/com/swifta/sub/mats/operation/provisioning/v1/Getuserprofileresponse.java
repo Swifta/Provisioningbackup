@@ -3,21 +3,19 @@ package com.swifta.sub.mats.operation.provisioning.v1;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for authenticationresponse complex type.
+ * <p>Java class for getuserprofileresponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authenticationresponse">
+ * &lt;complexType name="getuserprofileresponse">
  *   &lt;complexContent>
  *     &lt;extension base="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse">
  *       &lt;sequence>
- *         &lt;element name="ResponseMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}extension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -28,41 +26,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authenticationresponse", propOrder = {
-    "responseMessage",
+@XmlType(name = "getuserprofileresponse", propOrder = {
     "extension"
 })
-public class Authenticationresponse
+public class Getuserprofileresponse
     extends Operationresponse
 {
 
-    @XmlElement(name = "ResponseMessage")
-    protected String responseMessage;
     protected Extension extension;
-
-    /**
-     * Gets the value of the responseMessage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getResponseMessage() {
-        return responseMessage;
-    }
-
-    /**
-     * Sets the value of the responseMessage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setResponseMessage(String value) {
-        this.responseMessage = value;
-    }
 
     /**
      * Gets the value of the extension property.

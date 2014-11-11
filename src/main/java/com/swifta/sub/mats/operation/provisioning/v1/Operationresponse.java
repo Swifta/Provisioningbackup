@@ -36,10 +36,12 @@ import javax.xml.bind.annotation.XmlType;
     "parameterextension"
 })
 @XmlSeeAlso({
+    Setparentrequestresponse.class,
     Getuserprofileresponse.class,
     Linkaccountresponse.class,
     Registrationrequestresponse.class,
     Activationrequestresponse.class,
+    Addcustodyaccountrequestresponse.class,
     Disconnectaccountrequestresponse.class,
     Addaccountrequestresponse.class,
     Suspendaccountholderrequestresponse.class,

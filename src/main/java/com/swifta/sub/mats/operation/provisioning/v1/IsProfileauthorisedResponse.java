@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for activationResponse complex type.
+ * <p>Java class for isProfileauthorisedResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="activationResponse">
+ * &lt;complexType name="isProfileauthorisedResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}activationrequestresponse" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}isprofileathresponse" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "activationResponse", propOrder = {
+@XmlType(name = "isProfileauthorisedResponse", propOrder = {
     "_return"
 })
-public class ActivationResponse {
+public class IsProfileauthorisedResponse {
 
     @XmlElement(name = "return")
-    protected Activationrequestresponse _return;
+    protected Isprofileathresponse _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Activationrequestresponse }
+     *     {@link Isprofileathresponse }
      *     
      */
-    public Activationrequestresponse getReturn() {
+    public Isprofileathresponse getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class ActivationResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Activationrequestresponse }
+     *     {@link Isprofileathresponse }
      *     
      */
-    public void setReturn(Activationrequestresponse value) {
+    public void setReturn(Isprofileathresponse value) {
         this._return = value;
     }
 

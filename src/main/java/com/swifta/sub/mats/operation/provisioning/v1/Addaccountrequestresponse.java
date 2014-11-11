@@ -41,9 +41,9 @@ public class Addaccountrequestresponse
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -53,8 +53,8 @@ public class Addaccountrequestresponse
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Statuscode" is used by two different parts of a schema. See: 
-     * line 640 of file:/Users/user/Documents/swifta/provisions/provisioning/Provisioning-2.wsdl
-     * line 107 of file:/Users/user/Documents/swifta/provisions/provisioning/Provisioning-2.wsdl
+     * line 762 of file:/Volumes/NO%20NAME/Provisioning.wsdl
+     * line 107 of file:/Volumes/NO%20NAME/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 
@@ -76,8 +76,8 @@ public class Addaccountrequestresponse
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
      */

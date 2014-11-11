@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for addcustodyaccountResponse complex type.
+ * <p>Java class for getProfileofUserResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="addcustodyaccountResponse">
+ * &lt;complexType name="getProfileofUserResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}addaccountrequestresponse" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}getuserprofileresponse" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "addcustodyaccountResponse", propOrder = {
+@XmlType(name = "getProfileofUserResponse", propOrder = {
     "_return"
 })
-public class AddcustodyaccountResponse {
+public class GetProfileofUserResponse {
 
     @XmlElement(name = "return")
-    protected Addaccountrequestresponse _return;
+    protected Getuserprofileresponse _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Addaccountrequestresponse }
+     *     {@link Getuserprofileresponse }
      *     
      */
-    public Addaccountrequestresponse getReturn() {
+    public Getuserprofileresponse getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class AddcustodyaccountResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Addaccountrequestresponse }
+     *     {@link Getuserprofileresponse }
      *     
      */
-    public void setReturn(Addaccountrequestresponse value) {
+    public void setReturn(Getuserprofileresponse value) {
         this._return = value;
     }
 

@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for addloginCountuserprofile complex type.
+ * <p>Java class for addloginCounttouserprofile complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="addloginCountuserprofile">
+ * &lt;complexType name="addloginCounttouserprofile">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "addloginCountuserprofile", propOrder = {
+@XmlType(name = "addloginCounttouserprofile", propOrder = {
     "profile",
     "countername",
     "description",
@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
     "limitmessage",
     "extensionparameters"
 })
-public class AddloginCountuserprofile {
+public class AddloginCounttouserprofile {
 
     protected String profile;
     protected String countername;
