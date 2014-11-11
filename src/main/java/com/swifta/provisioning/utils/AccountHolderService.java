@@ -2,6 +2,8 @@ package com.swifta.provisioning.utils;
 
 import java.rmi.RemoteException;
 
+import org.apache.log4j.Logger;
+
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Activationrequest;
@@ -24,26 +26,48 @@ import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
 
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
+	private static final Logger logger = Logger
+			.getLogger(AccountHolderService.class);
 
 	public String linkccountrequest(String childUsername,
 			String parentUsername, int profileId, String reason)
 			throws RemoteException, DataServiceFault {
 		String statusMessage = "";
 		matsStub = new MatsdataserviceStub();
+		logger.info("---------------Instantiate stub service class");
 		Linkccountrequest linkAccountRequest = new Linkccountrequest();
 		linkAccountRequest.setChilduserresourceid(childUsername);
 		linkAccountRequest.setParentaccountresourceid(parentUsername);
 		linkAccountRequest.setProfileid(profileId);
 		linkAccountRequest.setReason(reason);
+		logger.info("---------------After setting the parameters for link account request");
 		LinkaccountresponsesE linkAccountResponses = matsStub
 				.linkccountrequest(linkAccountRequest);
-		Linkaccountresponses linkAccountResponse = linkAccountResponses
-				.getLinkaccountresponses();
-		Linkaccountresponse[] linkResponseArray = linkAccountResponse
-				.getLinkaccountresponse();
-		for (Linkaccountresponse singleResponse : linkResponseArray) {
-			statusMessage = singleResponse.getStatusMessage();
+		if (linkAccountResponses != null) {
+			logger.info("---------------After getting LinkaccountresponsesE class");
+			Linkaccountresponses linkAccountResponse = linkAccountResponses
+					.getLinkaccountresponses();
+			if (linkAccountResponse != null) {
+				logger.info("---------------After getting Linkaccountresponses class");
+				Linkaccountresponse[] linkResponseArray = linkAccountResponse
+						.getLinkaccountresponse();
+				if (linkResponseArray != null) {
+					logger.info("---------------After getting Linkaccountresponse[] class");
+					for (Linkaccountresponse singleResponse : linkResponseArray) {
+						statusMessage = singleResponse.getStatusMessage();
+						logger.info("---------------After Iterating Linkaccountresponse[] class");
+					}
+				} else {
+					logger.info("---------------After getting linkResponseArray class and its null");
+				}
+			} else {
+				logger.info("---------------After getting linkAccountResponse class and its null");
+			}
+		} else {
+
+			logger.info("---------------After getting LinkaccountresponsesE class and its null");
 		}
+		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
 	}
 
