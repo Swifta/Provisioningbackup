@@ -13,12 +13,11 @@ import javax.jws.WebResult;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
+import com.swifta.provisioning.utils.AccountHolderService;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
 import com.swifta.sub.mats.operation.data.model.ActivationdataModel;
 import com.swifta.sub.mats.operation.data.model.DataResponse;
-import com.swifta.sub.mats.operation.data.model.IdentificationType;
 import com.swifta.sub.mats.operation.data.model.LinkaccountModel;
-import com.swifta.sub.mats.operation.data.model.RegistrationdataModel;
 import com.swifta.sub.mats.operation.data.model.SetdefaultaccountModel;
 import com.swifta.sub.mats.operation.data.model.SetparentModel;
 import com.swifta.sub.mats.operation.provisioning.v1.Activationrequestresponse;
@@ -29,7 +28,6 @@ import com.swifta.sub.mats.operation.provisioning.v1.Linkaccountresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Operationresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.ParameterExtension;
 import com.swifta.sub.mats.operation.provisioning.v1.Registrationrequestresponse;
-import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
 import com.swifta.sub.mats.operation.provisioning.v1.SetDefaultaccountrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Setparentrequestresponse;
 
@@ -47,6 +45,7 @@ public class ProvisioningPortImpl implements Provisioning {
 
 	private static final Logger LOG = Logger
 			.getLogger(ProvisioningPortImpl.class.getName());
+	private AccountHolderService accountHolderService = new AccountHolderService();
 
 	/*
 	 * (non-Javadoc)
@@ -504,84 +503,11 @@ public class ProvisioningPortImpl implements Provisioning {
 		System.out.println(securityquestions);
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.Registrationrequestresponse registrationrequestresponse = new Registrationrequestresponse();
-
-			Provisioningclient provisioningclient = new Provisioningclient();
-
-			RegistrationdataModel registration = new RegistrationdataModel();
-			registration.setPrimarycontactname(accountholderdetails
-					.getPrimarycontact().getName());
-			registration.setPrimarycontactmobilenumber(accountholderdetails
-					.getPrimarycontact().getMobilenumber());
-			registration.setPrimarycontactphonenumber(accountholderdetails
-					.getPrimarycontact().getPhonenumber());
-			registration.setPrimarycontactemail(accountholderdetails
-					.getPrimarycontact().getEmail());
-
-			registration.setSecondarycontactname(accountholderdetails
-					.getSecondarycontact().getName());
-			registration.setSecondarycontactmobilenumber(accountholderdetails
-					.getSecondarycontact().getMobilenumber());
-			registration.setSecondarycontactphonenumber(accountholderdetails
-					.getSecondarycontact().getPhonenumber());
-			registration.setSecondarycontactemail(accountholderdetails
-					.getSecondarycontact().getEmail());
-
-			registration.setIdentificationnumber(accountholderdetails
-					.getIdentification().getIdentificationNo());
-			registration.setIdentificationtypeid(IdentificationType.NRIN
-					.returnIntvalue());
-			registration.setExpirydate(accountholderdetails.getIdentification()
-					.getExpirydate().toString());
-			registration.setIsssuer(accountholderdetails.getIdentification()
-					.getIssuer());
-			registration.setIssueDate(accountholderdetails.getIdentification()
-					.getIssueDate());
-
-			registration.setStreetaddress(accountholderdetails.getAddress()
-					.getStreetaddress());
-			registration.setPostalCode(accountholderdetails.getAddress()
-					.getPostalCode());
-			registration.setCity(accountholderdetails.getAddress().getCity());
-			registration.setProvince(accountholderdetails.getAddress()
-					.getProvince());
-
-			registration.setFirstname(accountholderdetails.getFirstname());
-			registration.setLastname(accountholderdetails.getLastname());
-			registration.setMiddlename(accountholderdetails.getMiddlename());
-			registration.setSuffix(accountholderdetails.getSuffix());
-			registration.setPrefix(accountholderdetails.getPrefix());
-			registration.setGenderid(accountholderdetails.getGenderid());
-			registration.setCountryid(accountholderdetails.getCountryid());
-			registration.setCountrystateid(accountholderdetails.getStateid());
-			registration.setCountrystatelgaid(accountholderdetails.getLgaid());
-			registration.setLanguageid(accountholderdetails.getLanguageid());
-			registration.setOccupation(accountholderdetails.getOccupation());
-			registration.setEmployer(accountholderdetails.getEmployer());
-			registration.setDateofbirth(accountholderdetails.getDateofbirth()
-					.toString());
-			registration.setUsername(username);
-			registration.setMsisdn(msisdn);
-			registration.setEmail(email);
-			registration.setProfileid(profileid);
-			registration.setBankcodeid(bankcodeid);
-			registration.setBankaccount(bankaccount);
-			registration.setClearingnumber(clearingnumber);
-			registration.setCurrencyid(new Integer(currencyid));
-			registration.setTermscondition(termscondition);
-
-			for (Securityquestions securityquestions2 : securityquestions) {
-				registration.setSecurityquestions(securityquestions2
-						.getQuestion());
-				registration.setSecurityquestionanswer(securityquestions2
-						.getAnswer());
-			}
-
-			DataResponse dataResponse = provisioningclient
-					.registration(registration);
-
-			registrationrequestresponse.setResponsemessage(dataResponse
-					.getStatusMessage());
-
+			registrationrequestresponse.setResponsemessage(accountHolderService
+					.registerUser(username, msisdn, email, profileid,
+							bankcodeid, bankaccount, clearingnumber,
+							accountholderdetails, currencyid, bankdomainnameid,
+							termscondition, securityquestions));
 			return registrationrequestresponse;
 		} catch (java.lang.Exception ex) {
 			ex.printStackTrace();

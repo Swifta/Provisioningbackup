@@ -4,27 +4,18 @@ import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
 
-import src.main.java.com.swifta.provisioning.utils.AccountHolderService;
-import src.main.java.com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
-
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkaccountresponse;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkaccountresponses;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.LinkaccountresponsesE;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkccountrequest;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registration;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registrationresponse;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Registrationresponses;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.RegistrationresponsesE;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountrequest;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponse;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponses;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.SetdefaultaccountresponsesE;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
 import com.swifta.sub.mats.operation.data.model.ActivationdataModel;
 import com.swifta.sub.mats.operation.data.model.DataResponse;
+import com.swifta.sub.mats.operation.data.model.IdentificationType;
+import com.swifta.sub.mats.operation.data.model.LinkaccountModel;
+import com.swifta.sub.mats.operation.data.model.RegistrationdataModel;
+import com.swifta.sub.mats.operation.data.model.SetdefaultaccountModel;
 import com.swifta.sub.mats.operation.data.model.SetparentModel;
+import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
+import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
 
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
@@ -37,42 +28,25 @@ public class AccountHolderService {
 			throws RemoteException, DataServiceFault {
 		String statusMessage = "";
 		provisioningClient = new Provisioningclient();
-		LinkaccountModel
-		provisioningClient.linkaccountrequest(linkaccountModel);
-		// matsStub = new MatsdataserviceStub();
 		logger.info("---------------Instantiate stub service class");
-		Linkccountrequest linkAccountRequest = new Linkccountrequest();
-		linkAccountRequest.setChilduserresourceid(childUsername);
-		linkAccountRequest.setParentaccountresourceid(parentUsername);
-		linkAccountRequest.setProfileid(profileId);
-		linkAccountRequest.setReason(reason);
-		logger.info("---------------After setting the parameters for link account request");
-		LinkaccountresponsesE linkAccountResponses;//
-		// matsStub
-		// .linkccountrequest(linkAccountRequest);
-		if (linkAccountResponses != null) {
-			logger.info("---------------After getting LinkaccountresponsesE class");
-			Linkaccountresponses linkAccountResponse = linkAccountResponses
-					.getLinkaccountresponses();
-			if (linkAccountResponse != null) {
-				logger.info("---------------After getting Linkaccountresponses class");
-				Linkaccountresponse[] linkResponseArray = linkAccountResponse
-						.getLinkaccountresponse();
-				if (linkResponseArray != null) {
-					logger.info("---------------After getting Linkaccountresponse[] class");
-					for (Linkaccountresponse singleResponse : linkResponseArray) {
-						statusMessage = singleResponse.getStatusMessage();
-						logger.info("---------------After Iterating Linkaccountresponse[] class");
-					}
-				} else {
-					logger.info("---------------After getting linkResponseArray class and its null");
-				}
-			} else {
-				logger.info("---------------After getting linkAccountResponse class and its null");
-			}
-		} else {
 
-			logger.info("---------------After getting LinkaccountresponsesE class and its null");
+		LinkaccountModel linkaccountModel = new LinkaccountModel();
+		linkaccountModel.setReason(reason);
+		linkaccountModel.setProfileid(profileId);
+		linkaccountModel.setLinkchildresourceid(childUsername);
+		linkaccountModel.setLinkparentaccountresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for link account request");
+		DataResponse dataResponse = provisioningClient
+				.linkaccountrequest(linkaccountModel);
+		// matsStub = new MatsdataserviceStub();
+
+		if (dataResponse != null) {
+			logger.info("---------------After getting dataResponse class");
+			statusMessage = dataResponse.getStatusMessage();
+
+		} else {
+			logger.info("---------------After getting dataResponse class and its null");
+
 		}
 		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
@@ -105,12 +79,13 @@ public class AccountHolderService {
 			String parentUsername) throws RemoteException, DataServiceFault {
 		provisioningClient = new Provisioningclient();
 		logger.info("---------------Instantiate stub service class");
-		SetparentModel parentModel = new SetparentModel();
-		parentModel.setChilduserresourceid(childUsername);
-		parentModel.setParentuserresourceid(parentUsername);
-		logger.info("---------------After setting the parameters for SetparentModel");
-		DataResponse dataResponse = provisioningClient.setparent(parentModel);
 		String statusMessage = "";
+		SetdefaultaccountModel setdefaultaccountModel = new SetdefaultaccountModel();
+		setdefaultaccountModel.setDchilduserresourceid(childUsername);
+		setdefaultaccountModel.setDparentaccountresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for Setdefaultaccountrequest");
+		DataResponse dataResponse = provisioningClient
+				.setdefaultaccount(setdefaultaccountModel);
 
 		if (dataResponse != null) {
 			logger.info("---------------After getting dataResponse class");
@@ -119,38 +94,6 @@ public class AccountHolderService {
 		} else {
 			logger.info("---------------After getting dataResponse class and its null");
 
-		}
-		logger.info("---------------Returning message ::::" + statusMessage);
-		return statusMessage;
-		String statusMessage = "";
-		Setdefaultaccountrequest setdefaultaccountrequest = new Setdefaultaccountrequest();
-		setdefaultaccountrequest.setChilduserresourceid(childUsername);
-		setdefaultaccountrequest.setParentaccountresourceid(parentUsername);
-		logger.info("---------------After setting the parameters for Setdefaultaccountrequest");
-		SetdefaultaccountresponsesE defaultAccountResponses;
-		// = matsStub .setdefaultaccountrequest(setdefaultaccountrequest);
-		if (defaultAccountResponses != null) {
-			logger.info("---------------After getting SetdefaultaccountresponsesE class");
-			Setdefaultaccountresponses defaultResponses = defaultAccountResponses
-					.getSetdefaultaccountresponses();
-			if (defaultResponses != null) {
-				logger.info("---------------After getting Setdefaultaccountresponses class");
-				Setdefaultaccountresponse[] defaultResponseArray = defaultResponses
-						.getSetdefaultaccountresponse();
-				if (defaultResponseArray != null) {
-					logger.info("---------------After getting Setdefaultaccountresponse[] class");
-					for (Setdefaultaccountresponse singleResponse : defaultResponseArray) {
-						statusMessage = singleResponse.getStatusMessage();
-						logger.info("---------------After Iterating Setdefaultaccountresponse[] class");
-					}
-				} else {
-					logger.info("---------------After getting Setdefaultaccountresponse[] class and its null");
-				}
-			} else {
-				logger.info("---------------After getting Setdefaultaccountresponses class and its null");
-			}
-		} else {
-			logger.info("---------------After getting SetdefaultaccountresponsesE class and its null");
 		}
 		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
@@ -188,115 +131,102 @@ public class AccountHolderService {
 	}
 
 	public String registerUser(
-			com.swifta.sub.mats.operation.provisioning.v1.Accountholderdetails AccountHolderDetails,
-			String bankAccount,
-			int bankcodeid,
-			int bankDomainid,
-			String clearingNumber,
-			int currencyid,
-			String email,
-			String msisdn,
+			java.lang.String username,
+			java.lang.String msisdn,
+			java.lang.String email,
 			int profileid,
-			java.util.List<com.swifta.sub.mats.operation.provisioning.v1.Securityquestions> securityquestions,
-			String termscondition, String username) throws RemoteException,
-			DataServiceFault {
-		matsStub = new MatsdataserviceStub();
-		Registration registration8 = new Registration();
-		String securityQues = "";
-		String securityAns = "";
-		String statusMessage = "";
-		String Message = "";
+			int bankcodeid,
+			java.lang.String bankaccount,
+			java.lang.String clearingnumber,
+			com.swifta.sub.mats.operation.provisioning.v1.Accountholderdetails accountholderdetails,
+			java.lang.String currencyid, java.lang.String bankdomainnameid,
+			java.lang.String termscondition,
+			java.util.List<Securityquestions> securityquestions)
+			throws RemoteException, DataServiceFault {
 
-		registration8.setBankaccount(bankAccount);
-		registration8.setBankcodeid(bankcodeid);
-		registration8.setBankdomainid(bankDomainid);
-		registration8.setCity(AccountHolderDetails.getAddress().getCity());
-		registration8.setClearingnumber(clearingNumber);
-		registration8.setCountryid(AccountHolderDetails.getCountryid());
-		registration8.setCountrystateid(AccountHolderDetails.getStateid());
-		registration8.setCountrystatelgaid(AccountHolderDetails.getLgaid());
-		registration8.setCurrencyid(currencyid);
-		registration8.setDateofbirth(AccountHolderDetails.getDateofbirth()
-				.toString());
-		registration8.setEmail(email);
-		registration8.setEmployer(AccountHolderDetails.getEmployer());
-		registration8.setExpirydate(AccountHolderDetails.getIdentification()
-				.getExpirydate().toString());
-		registration8.setFirstname(AccountHolderDetails.getFirstname());
-		registration8.setGenderid(AccountHolderDetails.getGenderid());
-		registration8.setIdentificationnumber(AccountHolderDetails
-				.getIdentification().getIdentificationNo());
-		// registration8.setIdentificationtypeid();
-		registration8.setIsssuer(AccountHolderDetails.getIdentification()
-				.getIssuer());
-		registration8.setIssueDate(AccountHolderDetails.getIdentification()
-				.getIssueDate());
-		registration8.setLanguageid(AccountHolderDetails.getLanguageid());
-		registration8.setLastname(AccountHolderDetails.getLastname());
-		registration8.setMiddlename(AccountHolderDetails.getMiddlename());
-		registration8.setMsisdn(msisdn);
-		registration8.setOccupation(AccountHolderDetails.getOccupation());
-		registration8.setPostalCode(AccountHolderDetails.getAddress()
-				.getPostalCode());
-		registration8.setPrefix(AccountHolderDetails.getPrefix());
-		registration8.setPrimarycontactemail(AccountHolderDetails
-				.getPrimarycontact().getEmail());
-		registration8.setPrimarycontactmobilenumber(AccountHolderDetails
-				.getPrimarycontact().getMobilenumber());
-		registration8.setPrimarycontactname(AccountHolderDetails
+		Provisioningclient provisioningclient = new Provisioningclient();
+
+		RegistrationdataModel registration = new RegistrationdataModel();
+		registration.setPrimarycontactname(accountholderdetails
 				.getPrimarycontact().getName());
-		registration8.setPrimarycontactphonenumber(AccountHolderDetails
+		registration.setPrimarycontactmobilenumber(accountholderdetails
+				.getPrimarycontact().getMobilenumber());
+		registration.setPrimarycontactphonenumber(accountholderdetails
 				.getPrimarycontact().getPhonenumber());
-		registration8.setProfileid(profileid);
-		registration8.setProvince(AccountHolderDetails.getAddress()
-				.getProvince());
-		registration8.setSecondarycontactemail(AccountHolderDetails
-				.getSecondarycontact().getEmail());
-		registration8.setSecondarycontactmobilenumber(AccountHolderDetails
-				.getSecondarycontact().getMobilenumber());
-		registration8.setSecondarycontactname(AccountHolderDetails
+		registration.setPrimarycontactemail(accountholderdetails
+				.getPrimarycontact().getEmail());
+
+		registration.setSecondarycontactname(accountholderdetails
 				.getSecondarycontact().getName());
-		registration8.setSecondarycontactphonenumber(AccountHolderDetails
+		registration.setSecondarycontactmobilenumber(accountholderdetails
+				.getSecondarycontact().getMobilenumber());
+		registration.setSecondarycontactphonenumber(accountholderdetails
 				.getSecondarycontact().getPhonenumber());
-		if (securityquestions != null) {
-			for (Securityquestions singleResponse : securityquestions) {
-				securityQues = singleResponse.getQuestion();
-				securityAns = singleResponse.getAnswer();
-			}
-		}
+		registration.setSecondarycontactemail(accountholderdetails
+				.getSecondarycontact().getEmail());
 
-		registration8.setSecurityquestionanswer(securityQues);
-		registration8.setSecurityquestions(securityQues);
-		// registration8.setStatusMessage();
-		registration8.setStreetaddress(AccountHolderDetails.getAddress()
+		registration.setIdentificationnumber(accountholderdetails
+				.getIdentification().getIdentificationNo());
+		registration.setIdentificationtypeid(IdentificationType.NRIN
+				.returnIntvalue());
+		registration.setExpirydate(accountholderdetails.getIdentification()
+				.getExpirydate().toString());
+		registration.setIsssuer(accountholderdetails.getIdentification()
+				.getIssuer());
+		registration.setIssueDate(accountholderdetails.getIdentification()
+				.getIssueDate());
+
+		registration.setStreetaddress(accountholderdetails.getAddress()
 				.getStreetaddress());
-		registration8.setSuffix(AccountHolderDetails.getSuffix());
-		registration8.setTermscondition(termscondition);
-		registration8.setUsername(username);
+		registration.setPostalCode(accountholderdetails.getAddress()
+				.getPostalCode());
+		registration.setCity(accountholderdetails.getAddress().getCity());
+		registration.setProvince(accountholderdetails.getAddress()
+				.getProvince());
 
-		RegistrationresponsesE response = matsStub.registration(registration8);
-		if (response != null) {
-			Registrationresponses response2 = response
-					.getRegistrationresponses();
-			if (response2 != null) {
-				Registrationresponse[] response3 = response2
-						.getRegistrationresponse();
-				if (response3 != null) {
-					for (Registrationresponse singleResponse : response3) {
-						Message = singleResponse.getStatusMessage();
-					}
-					statusMessage = Message;
-				} else {
-					statusMessage = "Response is empty";
-				}
+		registration.setFirstname(accountholderdetails.getFirstname());
+		registration.setLastname(accountholderdetails.getLastname());
+		registration.setMiddlename(accountholderdetails.getMiddlename());
+		registration.setSuffix(accountholderdetails.getSuffix());
+		registration.setPrefix(accountholderdetails.getPrefix());
+		registration.setGenderid(accountholderdetails.getGenderid());
+		registration.setCountryid(accountholderdetails.getCountryid());
+		registration.setCountrystateid(accountholderdetails.getStateid());
+		registration.setCountrystatelgaid(accountholderdetails.getLgaid());
+		registration.setLanguageid(accountholderdetails.getLanguageid());
+		registration.setOccupation(accountholderdetails.getOccupation());
+		registration.setEmployer(accountholderdetails.getEmployer());
+		registration.setDateofbirth(accountholderdetails.getDateofbirth()
+				.toString());
+		registration.setUsername(username);
+		registration.setMsisdn(msisdn);
+		registration.setEmail(email);
+		registration.setProfileid(profileid);
+		registration.setBankcodeid(bankcodeid);
+		registration.setBankaccount(bankaccount);
+		registration.setClearingnumber(clearingnumber);
+		registration.setCurrencyid(new Integer(currencyid));
+		registration.setTermscondition(termscondition);
 
-			} else {
-				statusMessage = "Response is empty";
-			}
-		} else {
-			statusMessage = "Response is empty";
+		for (Securityquestions securityquestions2 : securityquestions) {
+			registration.setSecurityquestions(securityquestions2.getQuestion());
+			registration.setSecurityquestionanswer(securityquestions2
+					.getAnswer());
 		}
 
+		DataResponse dataResponse = provisioningclient
+				.registration(registration);
+		String statusMessage = "";
+
+		if (dataResponse != null) {
+			logger.info("---------------After getting dataResponse class");
+			statusMessage = dataResponse.getStatusMessage();
+
+		} else {
+			logger.info("---------------After getting dataResponse class and its null");
+
+		}
+		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
 
 	}
