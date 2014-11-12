@@ -1,0 +1,1682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="provisioning" targetNamespace="http://swifta.com/sub/mats/operation/provisioning/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://swifta.com/sub/mats/operation/provisioning/v1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://swifta.com/sub/mats/operation/provisioning/v1.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://swifta.com/sub/mats/operation/provisioning/v1.0">
+    <xs:element name="activationrequest" type="tns:activationrequest"/>
+    <xs:element name="activationrequestResponse" type="tns:activationrequestResponse"/>
+    <xs:element name="addaccount" type="tns:addaccount"/>
+    <xs:element name="addaccountResponse" type="tns:addaccountResponse"/>
+    <xs:element name="addaccounttoexistinguser" type="tns:addaccounttoexistinguser"/>
+    <xs:element name="addaccounttoexistinguserResponse" type="tns:addaccounttoexistinguserResponse"/>
+    <xs:element name="addbackofusers" type="tns:addbackofusers"/>
+    <xs:element name="addbackofusersResponse" type="tns:addbackofusersResponse"/>
+    <xs:element name="addcustodyaccount" type="tns:addcustodyaccount"/>
+    <xs:element name="addcustodyaccountResponse" type="tns:addcustodyaccountResponse"/>
+    <xs:element name="addglobalsetting" type="tns:addglobalsetting"/>
+    <xs:element name="addglobalsettingResponse" type="tns:addglobalsettingResponse"/>
+    <xs:element name="addloginCounttouserprofile" type="tns:addloginCounttouserprofile"/>
+    <xs:element name="addloginCounttouserprofileResponse" type="tns:addloginCounttouserprofileResponse"/>
+    <xs:element name="addpermissionstoaccountprofile" type="tns:addpermissionstoaccountprofile"/>
+    <xs:element name="addpermissionstoaccountprofileResponse" type="tns:addpermissionstoaccountprofileResponse"/>
+    <xs:element name="addpermissionstouserprofile" type="tns:addpermissionstouserprofile"/>
+    <xs:element name="addpermissionstouserprofileResponse" type="tns:addpermissionstouserprofileResponse"/>
+    <xs:element name="addprofile" type="tns:addprofile"/>
+    <xs:element name="addprofileResponse" type="tns:addprofileResponse"/>
+    <xs:element name="addservicetouserprofile" type="tns:addservicetouserprofile"/>
+    <xs:element name="addservicetouserprofileResponse" type="tns:addservicetouserprofileResponse"/>
+    <xs:element name="addthreadholdmessagetoaccountprofile" type="tns:addthreadholdmessagetoaccountprofile"/>
+    <xs:element name="addthreadholdmessagetoaccountprofileResponse" type="tns:addthreadholdmessagetoaccountprofileResponse"/>
+    <xs:element name="addthreadholdmessagetouserprofile" type="tns:addthreadholdmessagetouserprofile"/>
+    <xs:element name="addthreadholdmessagetouserprofileResponse" type="tns:addthreadholdmessagetouserprofileResponse"/>
+    <xs:element name="addthresholdtoaccountprofile" type="tns:addthresholdtoaccountprofile"/>
+    <xs:element name="addthresholdtoaccountprofileResponse" type="tns:addthresholdtoaccountprofileResponse"/>
+    <xs:element name="addthresholdtouserprofile" type="tns:addthresholdtouserprofile"/>
+    <xs:element name="addthresholdtouserprofileResponse" type="tns:addthresholdtouserprofileResponse"/>
+    <xs:element name="addtransferCountmessagetoaccountprofile" type="tns:addtransferCountmessagetoaccountprofile"/>
+    <xs:element name="addtransferCountmessagetoaccountprofileResponse" type="tns:addtransferCountmessagetoaccountprofileResponse"/>
+    <xs:element name="addtransferCountmessagetouserprofile" type="tns:addtransferCountmessagetouserprofile"/>
+    <xs:element name="addtransferCountmessagetouserprofileResponse" type="tns:addtransferCountmessagetouserprofileResponse"/>
+    <xs:element name="addtransferCounttoaccountprofile" type="tns:addtransferCounttoaccountprofile"/>
+    <xs:element name="addtransferCounttoaccountprofileResponse" type="tns:addtransferCounttoaccountprofileResponse"/>
+    <xs:element name="addtransferCounttouserprofile" type="tns:addtransferCounttouserprofile"/>
+    <xs:element name="addtransferCounttouserprofileResponse" type="tns:addtransferCounttouserprofileResponse"/>
+    <xs:element name="approveresetpassword" type="tns:approveresetpassword"/>
+    <xs:element name="approveresetpasswordResponse" type="tns:approveresetpasswordResponse"/>
+    <xs:element name="authenticate" type="tns:authenticate"/>
+    <xs:element name="authenticateResponse" type="tns:authenticateResponse"/>
+    <xs:element name="changepassword" type="tns:changepassword"/>
+    <xs:element name="changepasswordResponse" type="tns:changepasswordResponse"/>
+    <xs:element name="deletebackofusers" type="tns:deletebackofusers"/>
+    <xs:element name="deletebackofusersResponse" type="tns:deletebackofusersResponse"/>
+    <xs:element name="disconnectaccount" type="tns:disconnectaccount"/>
+    <xs:element name="disconnectaccountResponse" type="tns:disconnectaccountResponse"/>
+    <xs:element name="editbackofusers" type="tns:editbackofusers"/>
+    <xs:element name="editbackofusersResponse" type="tns:editbackofusersResponse"/>
+    <xs:element name="getProfileofUser" type="tns:getProfileofUser"/>
+    <xs:element name="getProfileofUserResponse" type="tns:getProfileofUserResponse"/>
+    <xs:element name="isProfileauthorised" type="tns:isProfileauthorised"/>
+    <xs:element name="isProfileauthorisedResponse" type="tns:isProfileauthorisedResponse"/>
+    <xs:element name="linkaccountrequest" type="tns:linkaccountrequest"/>
+    <xs:element name="linkaccountrequestResponse" type="tns:linkaccountrequestResponse"/>
+    <xs:element name="registration" type="tns:registration"/>
+    <xs:element name="registrationResponse" type="tns:registrationResponse"/>
+    <xs:element name="resetpassword" type="tns:resetpassword"/>
+    <xs:element name="resetpasswordResponse" type="tns:resetpasswordResponse"/>
+    <xs:element name="setdefaultaccount" type="tns:setdefaultaccount"/>
+    <xs:element name="setdefaultaccountResponse" type="tns:setdefaultaccountResponse"/>
+    <xs:element name="setparentaccount" type="tns:setparentaccount"/>
+    <xs:element name="setparentaccountResponse" type="tns:setparentaccountResponse"/>
+    <xs:element name="setprofilerequest" type="tns:setprofilerequest"/>
+    <xs:element name="setprofilerequestResponse" type="tns:setprofilerequestResponse"/>
+    <xs:element name="specifybalancingtypetoaccountprofile" type="tns:specifybalancingtypetoaccountprofile"/>
+    <xs:element name="specifybalancingtypetoaccountprofileResponse" type="tns:specifybalancingtypetoaccountprofileResponse"/>
+    <xs:element name="suspendaccountholder" type="tns:suspendaccountholder"/>
+    <xs:element name="suspendaccountholderResponse" type="tns:suspendaccountholderResponse"/>
+    <xs:element name="viewbackofusers" type="tns:viewbackofusers"/>
+    <xs:element name="viewbackofusersResponse" type="tns:viewbackofusersResponse"/>
+    <xs:complexType name="specifybalancingtypetoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="limit" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="limitmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="parameterExtension">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="mmoperator" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="extension" nillable="true" type="tns:extension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="extension">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="any" nillable="true" type="xs:anyType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="specifybalancingtypetoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType abstract="true" name="operationresponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+            <xs:element minOccurs="0" name="parameterextension" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCountmessagetouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="countertype" type="tns:transfercounttype"/>
+            <xs:element minOccurs="0" name="transactiontype" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCountmessagetouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCounttouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="countertype" type="tns:transfercounttype"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="transactiontype" type="xs:string"/>
+            <xs:element minOccurs="0" name="limit" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="limitmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCounttouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="approveresetpassword">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="newpassword" type="xs:string"/>
+            <xs:element minOccurs="0" name="confirmpassword" type="xs:string"/>
+            <xs:element minOccurs="0" name="otp" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="approveresetpasswordResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="suspendaccountholder">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="confirmcredential" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="suspendaccountholderResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:suspendaccountholderrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="suspendaccountholderrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="linkaccountrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="userresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="profileid" type="xs:string"/>
+            <xs:element minOccurs="0" name="paraentaccountresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="linkaccountrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:linkaccountresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="linkaccountresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="isProfileauthorised">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profilename" type="xs:string"/>
+            <xs:element minOccurs="0" name="operation" type="xs:string"/>
+            <xs:element minOccurs="0" name="permission" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="isProfileauthorisedResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:isprofileathresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="isprofileathresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ResponseMessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="addloginCounttouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="limit" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="limitmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addloginCounttouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addpermissionstoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="activepermissions" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addpermissionstoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCounttoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="countertype" type="tns:transfercounttype"/>
+            <xs:element minOccurs="0" name="transactiontype" type="xs:string"/>
+            <xs:element minOccurs="0" name="limit" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="limitmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCounttoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthresholdtoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdtype" type="tns:thresholdtype"/>
+            <xs:element minOccurs="0" name="transactiontype" type="tns:transactiontype"/>
+            <xs:element minOccurs="0" name="value" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthresholdtoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addbackofusers">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="firstname" type="xs:string"/>
+            <xs:element minOccurs="0" name="surname" type="xs:string"/>
+            <xs:element minOccurs="0" name="username" type="xs:string"/>
+            <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="profileid" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addbackofusersResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="resetpassword">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="forcepasswordchangeafterlogin" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="resetpasswordResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="authenticate">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="password" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="authenticateResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:authenticationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="authenticationresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ResponseMessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="setdefaultaccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="userresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="paraentaccountresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setdefaultaccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:setDefaultaccountrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setDefaultaccountrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="changepassword">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="currentpassword" type="xs:string"/>
+            <xs:element minOccurs="0" name="newpassword" type="xs:string"/>
+            <xs:element minOccurs="0" name="confirmpassword" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="changepasswordResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="activationrequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="credential" type="tns:credentials"/>
+            <xs:element minOccurs="0" name="securityquestionanswer" type="xs:string"/>
+            <xs:element minOccurs="0" name="identificationno" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankdomainid" type="xs:string"/>
+            <xs:element minOccurs="0" name="currency" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="credentials">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="firstpin" type="xs:string"/>
+            <xs:element minOccurs="0" name="confirmpin" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="activationrequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:activationrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="activationrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ResponseMessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="addprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profilename" type="xs:string"/>
+            <xs:element minOccurs="0" name="profiletype" type="tns:profiletype"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthreadholdmessagetouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdtype" type="tns:thresholdtype"/>
+            <xs:element minOccurs="0" name="thresholdmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthreadholdmessagetouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setparentaccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="userresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="paraentaccountresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setparentaccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:setparentrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setparentrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="getProfileofUser">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getProfileofUserResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:getuserprofileresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="getuserprofileresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="extension" type="tns:extension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="registration">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="username" type="xs:string"/>
+            <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element name="profileid" type="xs:int"/>
+            <xs:element name="bankcodeid" type="xs:int"/>
+            <xs:element minOccurs="0" name="bankaccount" type="xs:string"/>
+            <xs:element minOccurs="0" name="clearingnumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountholderdetails" type="tns:accountholderdetails"/>
+            <xs:element minOccurs="0" name="currencyid" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankdomainnameid" type="xs:string"/>
+            <xs:element minOccurs="0" name="termscondition" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="securityquestions" type="tns:securityquestions"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="accountholderdetails">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="firstname" type="xs:string"/>
+            <xs:element minOccurs="0" name="lastname" type="xs:string"/>
+            <xs:element minOccurs="0" name="middlename" type="xs:string"/>
+            <xs:element minOccurs="0" name="suffix" type="xs:string"/>
+            <xs:element minOccurs="0" name="prefix" type="xs:string"/>
+            <xs:element name="genderid" type="xs:int"/>
+            <xs:element name="countryid" type="xs:int"/>
+            <xs:element name="stateid" type="xs:int"/>
+            <xs:element name="lgaid" type="xs:int"/>
+            <xs:element name="languageid" type="xs:int"/>
+            <xs:element minOccurs="0" name="occupation" type="xs:string"/>
+            <xs:element minOccurs="0" name="employer" type="xs:string"/>
+            <xs:element minOccurs="0" name="identification" type="tns:identification"/>
+            <xs:element minOccurs="0" name="address" type="tns:address"/>
+            <xs:element minOccurs="0" name="dateofbirth" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="primarycontact" type="tns:primaryContactInfo"/>
+            <xs:element minOccurs="0" name="secondarycontact" type="tns:secondaryContactInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="identification">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="identificationNo" type="xs:string"/>
+            <xs:element minOccurs="0" name="identificationType" type="tns:identificationType"/>
+            <xs:element minOccurs="0" name="expirydate" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="issuer" type="xs:string"/>
+            <xs:element minOccurs="0" name="issueDate" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="address">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="streetaddress" type="xs:string"/>
+            <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="city" type="xs:string"/>
+            <xs:element minOccurs="0" name="province" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="primaryContactInfo">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobilenumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="phonenumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="secondaryContactInfo">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobilenumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="phonenumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="securityquestions">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="question" type="xs:string"/>
+            <xs:element minOccurs="0" name="answer" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="registrationResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:registrationrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="registrationrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="disconnectaccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="userresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="paraentaccountresourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="disconnectaccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:disconnectaccountrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="disconnectaccountrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="responsemessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="viewbackofusers">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="filter" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="viewbackofusersResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addservicetouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="servicetype" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addservicetouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCountmessagetoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="countertype" type="tns:transfercounttype"/>
+            <xs:element minOccurs="0" name="transactiontype" type="xs:string"/>
+            <xs:element minOccurs="0" name="autoresetcounter" type="tns:autoresetcounterevery"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addtransferCountmessagetoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthreadholdmessagetoaccountprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="countername" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdtype" type="tns:thresholdtype"/>
+            <xs:element minOccurs="0" name="thresholdmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthreadholdmessagetoaccountprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addcustodyaccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="currencycode" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankcode" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountnumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountname" type="xs:string"/>
+            <xs:element minOccurs="0" name="bankdomain" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addcustodyaccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:addcustodyaccountrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addcustodyaccountrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountnumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="setprofilerequest">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="profileid" type="xs:string"/>
+            <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="setprofilerequestResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="editbackofusers">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="firstname" type="xs:string"/>
+            <xs:element minOccurs="0" name="surname" type="xs:string"/>
+            <xs:element minOccurs="0" name="username" type="xs:string"/>
+            <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="editbackofusersResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addpermissionstouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="activepermissions" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addpermissionstouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccounttoexistinguser">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="resourceid" type="xs:string"/>
+            <xs:element minOccurs="0" name="accounttype" type="xs:string"/>
+            <xs:element minOccurs="0" name="profileid" type="xs:string"/>
+            <xs:element minOccurs="0" name="currency" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccounttoexistinguserResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:addaccounttoexistinguserrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccounttoexistinguserrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountnumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="addglobalsetting">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="defaultuserprofile" type="xs:string"/>
+            <xs:element minOccurs="0" name="defaultuseraccountprofile" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addglobalsettingResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deletebackofusers">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="username" type="xs:string"/>
+            <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="deletebackofusersResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccount">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="accounttype" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountprofileid" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountreferenceprofile" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccountResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:addaccountrequestresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addaccountrequestresponse">
+        <xs:complexContent>
+            <xs:extension base="tns:operationresponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="accountnumber" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statuscode" type="tns:statusCode"/>
+                    <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="addthresholdtouserprofile">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="profile" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdname" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdtype" type="tns:thresholdtype"/>
+            <xs:element minOccurs="0" name="transactiontype" type="tns:transactiontype"/>
+            <xs:element minOccurs="0" name="value" type="xs:string"/>
+            <xs:element minOccurs="0" name="thresholdmessage" type="xs:string"/>
+            <xs:element minOccurs="0" name="extensionparameters" type="tns:parameterExtension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="addthresholdtouserprofileResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="return" type="tns:operationresponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="autoresetcounterevery">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE"/>
+            <xs:enumeration value="DAY"/>
+            <xs:enumeration value="WEEK"/>
+            <xs:enumeration value="MONTH"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="statusCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="COMPLETED"/>
+            <xs:enumeration value="REJECTED"/>
+            <xs:enumeration value="PENDING"/>
+            <xs:enumeration value="FAILED"/>
+            <xs:enumeration value="CREATED"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="transfercounttype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NUMBEROFTIMES_BASED"/>
+            <xs:enumeration value="AMOUNT_BASED"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="thresholdtype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MAXIMUM_BALANCE_ON_ACCOUNT"/>
+            <xs:enumeration value="MAXIMUM_AMOUNT_TO_SEND"/>
+            <xs:enumeration value="MAXIMUM_AMOUNT_TO_RECEIVE"/>
+            <xs:enumeration value="MINIMUM_AMOUNT_TO_SEND"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="transactiontype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SPCASHIN"/>
+            <xs:enumeration value="SPCASHOUT"/>
+            <xs:enumeration value="CASHIN"/>
+            <xs:enumeration value="CASHOUT"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="profiletype">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ACCOUNT_HOLDER_PROFILE"/>
+            <xs:enumeration value="ACCOUNT_HOLDER_ACCOUNT_REFERENCE_PROFILE"/>
+            <xs:enumeration value="ACCOUNT_PROFILE"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="identificationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PASSP"/>
+            <xs:enumeration value="DRLCS"/>
+            <xs:enumeration value="SOCS"/>
+            <xs:enumeration value="IDCD"/>
+            <xs:enumeration value="EMID"/>
+            <xs:enumeration value="NRIN"/>
+            <xs:enumeration value="OTHR"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addglobalsettingResponse">
+    <wsdl:part name="parameters" element="tns:addglobalsettingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProfileofUserResponse">
+    <wsdl:part name="parameters" element="tns:getProfileofUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registrationResponse">
+    <wsdl:part name="parameters" element="tns:registrationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCountmessagetoaccountprofile">
+    <wsdl:part name="parameters" element="tns:addtransferCountmessagetoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCountmessagetoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:addtransferCountmessagetoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCounttoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:addtransferCounttoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="approveresetpasswordResponse">
+    <wsdl:part name="parameters" element="tns:approveresetpasswordResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setprofilerequestResponse">
+    <wsdl:part name="parameters" element="tns:setprofilerequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addloginCounttouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addloginCounttouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthreadholdmessagetouserprofile">
+    <wsdl:part name="parameters" element="tns:addthreadholdmessagetouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activationrequest">
+    <wsdl:part name="parameters" element="tns:activationrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthresholdtouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addthresholdtouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changepasswordResponse">
+    <wsdl:part name="parameters" element="tns:changepasswordResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disconnectaccountResponse">
+    <wsdl:part name="parameters" element="tns:disconnectaccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addpermissionstoaccountprofile">
+    <wsdl:part name="parameters" element="tns:addpermissionstoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthreadholdmessagetoaccountprofile">
+    <wsdl:part name="parameters" element="tns:addthreadholdmessagetoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addpermissionstouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addpermissionstouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addbackofusers">
+    <wsdl:part name="parameters" element="tns:addbackofusers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProfileofUser">
+    <wsdl:part name="parameters" element="tns:getProfileofUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthreadholdmessagetoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:addthreadholdmessagetoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editbackofusersResponse">
+    <wsdl:part name="parameters" element="tns:editbackofusersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCountmessagetouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addtransferCountmessagetouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthreadholdmessagetouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addthreadholdmessagetouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthresholdtoaccountprofile">
+    <wsdl:part name="parameters" element="tns:addthresholdtoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCountmessagetouserprofile">
+    <wsdl:part name="parameters" element="tns:addtransferCountmessagetouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="disconnectaccount">
+    <wsdl:part name="parameters" element="tns:disconnectaccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="specifybalancingtypetoaccountprofile">
+    <wsdl:part name="parameters" element="tns:specifybalancingtypetoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addservicetouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addservicetouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="suspendaccountholder">
+    <wsdl:part name="parameters" element="tns:suspendaccountholder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="linkaccountrequestResponse">
+    <wsdl:part name="parameters" element="tns:linkaccountrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="specifybalancingtypetoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:specifybalancingtypetoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addpermissionstoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:addpermissionstoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addbackofusersResponse">
+    <wsdl:part name="parameters" element="tns:addbackofusersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCounttouserprofileResponse">
+    <wsdl:part name="parameters" element="tns:addtransferCounttouserprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="viewbackofusers">
+    <wsdl:part name="parameters" element="tns:viewbackofusers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletebackofusersResponse">
+    <wsdl:part name="parameters" element="tns:deletebackofusersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addcustodyaccount">
+    <wsdl:part name="parameters" element="tns:addcustodyaccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addloginCounttouserprofile">
+    <wsdl:part name="parameters" element="tns:addloginCounttouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setdefaultaccountResponse">
+    <wsdl:part name="parameters" element="tns:setdefaultaccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editbackofusers">
+    <wsdl:part name="parameters" element="tns:editbackofusers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setprofilerequest">
+    <wsdl:part name="parameters" element="tns:setprofilerequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addaccounttoexistinguserResponse">
+    <wsdl:part name="parameters" element="tns:addaccounttoexistinguserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCounttoaccountprofile">
+    <wsdl:part name="parameters" element="tns:addtransferCounttoaccountprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="authenticateResponse">
+    <wsdl:part name="parameters" element="tns:authenticateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addpermissionstouserprofile">
+    <wsdl:part name="parameters" element="tns:addpermissionstouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changepassword">
+    <wsdl:part name="parameters" element="tns:changepassword">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addprofile">
+    <wsdl:part name="parameters" element="tns:addprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addcustodyaccountResponse">
+    <wsdl:part name="parameters" element="tns:addcustodyaccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="linkaccountrequest">
+    <wsdl:part name="parameters" element="tns:linkaccountrequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetpasswordResponse">
+    <wsdl:part name="parameters" element="tns:resetpasswordResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isProfileauthorisedResponse">
+    <wsdl:part name="parameters" element="tns:isProfileauthorisedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="suspendaccountholderResponse">
+    <wsdl:part name="parameters" element="tns:suspendaccountholderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addprofileResponse">
+    <wsdl:part name="parameters" element="tns:addprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetpassword">
+    <wsdl:part name="parameters" element="tns:resetpassword">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registration">
+    <wsdl:part name="parameters" element="tns:registration">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addservicetouserprofile">
+    <wsdl:part name="parameters" element="tns:addservicetouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="activationrequestResponse">
+    <wsdl:part name="parameters" element="tns:activationrequestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="authenticate">
+    <wsdl:part name="parameters" element="tns:authenticate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setparentaccount">
+    <wsdl:part name="parameters" element="tns:setparentaccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setparentaccountResponse">
+    <wsdl:part name="parameters" element="tns:setparentaccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="approveresetpassword">
+    <wsdl:part name="parameters" element="tns:approveresetpassword">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isProfileauthorised">
+    <wsdl:part name="parameters" element="tns:isProfileauthorised">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setdefaultaccount">
+    <wsdl:part name="parameters" element="tns:setdefaultaccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addaccount">
+    <wsdl:part name="parameters" element="tns:addaccount">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addaccountResponse">
+    <wsdl:part name="parameters" element="tns:addaccountResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthresholdtouserprofile">
+    <wsdl:part name="parameters" element="tns:addthresholdtouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addtransferCounttouserprofile">
+    <wsdl:part name="parameters" element="tns:addtransferCounttouserprofile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addglobalsetting">
+    <wsdl:part name="parameters" element="tns:addglobalsetting">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deletebackofusers">
+    <wsdl:part name="parameters" element="tns:deletebackofusers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addthresholdtoaccountprofileResponse">
+    <wsdl:part name="parameters" element="tns:addthresholdtoaccountprofileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addaccounttoexistinguser">
+    <wsdl:part name="parameters" element="tns:addaccounttoexistinguser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="viewbackofusersResponse">
+    <wsdl:part name="parameters" element="tns:viewbackofusersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Provisioning">
+    <wsdl:operation name="specifybalancingtypetoaccountprofile">
+      <wsdl:input name="specifybalancingtypetoaccountprofile" message="tns:specifybalancingtypetoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="specifybalancingtypetoaccountprofileResponse" message="tns:specifybalancingtypetoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCountmessagetouserprofile">
+      <wsdl:input name="addtransferCountmessagetouserprofile" message="tns:addtransferCountmessagetouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addtransferCountmessagetouserprofileResponse" message="tns:addtransferCountmessagetouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCounttouserprofile">
+      <wsdl:input name="addtransferCounttouserprofile" message="tns:addtransferCounttouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addtransferCounttouserprofileResponse" message="tns:addtransferCounttouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveresetpassword">
+      <wsdl:input name="approveresetpassword" message="tns:approveresetpassword">
+    </wsdl:input>
+      <wsdl:output name="approveresetpasswordResponse" message="tns:approveresetpasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendaccountholder">
+      <wsdl:input name="suspendaccountholder" message="tns:suspendaccountholder">
+    </wsdl:input>
+      <wsdl:output name="suspendaccountholderResponse" message="tns:suspendaccountholderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="linkaccountrequest">
+      <wsdl:input name="linkaccountrequest" message="tns:linkaccountrequest">
+    </wsdl:input>
+      <wsdl:output name="linkaccountrequestResponse" message="tns:linkaccountrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isProfileauthorised">
+      <wsdl:input name="isProfileauthorised" message="tns:isProfileauthorised">
+    </wsdl:input>
+      <wsdl:output name="isProfileauthorisedResponse" message="tns:isProfileauthorisedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addloginCounttouserprofile">
+      <wsdl:input name="addloginCounttouserprofile" message="tns:addloginCounttouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addloginCounttouserprofileResponse" message="tns:addloginCounttouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpermissionstoaccountprofile">
+      <wsdl:input name="addpermissionstoaccountprofile" message="tns:addpermissionstoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="addpermissionstoaccountprofileResponse" message="tns:addpermissionstoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCounttoaccountprofile">
+      <wsdl:input name="addtransferCounttoaccountprofile" message="tns:addtransferCounttoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="addtransferCounttoaccountprofileResponse" message="tns:addtransferCounttoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthresholdtoaccountprofile">
+      <wsdl:input name="addthresholdtoaccountprofile" message="tns:addthresholdtoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="addthresholdtoaccountprofileResponse" message="tns:addthresholdtoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addbackofusers">
+      <wsdl:input name="addbackofusers" message="tns:addbackofusers">
+    </wsdl:input>
+      <wsdl:output name="addbackofusersResponse" message="tns:addbackofusersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetpassword">
+      <wsdl:input name="resetpassword" message="tns:resetpassword">
+    </wsdl:input>
+      <wsdl:output name="resetpasswordResponse" message="tns:resetpasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticate">
+      <wsdl:input name="authenticate" message="tns:authenticate">
+    </wsdl:input>
+      <wsdl:output name="authenticateResponse" message="tns:authenticateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setdefaultaccount">
+      <wsdl:input name="setdefaultaccount" message="tns:setdefaultaccount">
+    </wsdl:input>
+      <wsdl:output name="setdefaultaccountResponse" message="tns:setdefaultaccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changepassword">
+      <wsdl:input name="changepassword" message="tns:changepassword">
+    </wsdl:input>
+      <wsdl:output name="changepasswordResponse" message="tns:changepasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activationrequest">
+      <wsdl:input name="activationrequest" message="tns:activationrequest">
+    </wsdl:input>
+      <wsdl:output name="activationrequestResponse" message="tns:activationrequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addprofile">
+      <wsdl:input name="addprofile" message="tns:addprofile">
+    </wsdl:input>
+      <wsdl:output name="addprofileResponse" message="tns:addprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthreadholdmessagetouserprofile">
+      <wsdl:input name="addthreadholdmessagetouserprofile" message="tns:addthreadholdmessagetouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addthreadholdmessagetouserprofileResponse" message="tns:addthreadholdmessagetouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setparentaccount">
+      <wsdl:input name="setparentaccount" message="tns:setparentaccount">
+    </wsdl:input>
+      <wsdl:output name="setparentaccountResponse" message="tns:setparentaccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfileofUser">
+      <wsdl:input name="getProfileofUser" message="tns:getProfileofUser">
+    </wsdl:input>
+      <wsdl:output name="getProfileofUserResponse" message="tns:getProfileofUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registration">
+      <wsdl:input name="registration" message="tns:registration">
+    </wsdl:input>
+      <wsdl:output name="registrationResponse" message="tns:registrationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disconnectaccount">
+      <wsdl:input name="disconnectaccount" message="tns:disconnectaccount">
+    </wsdl:input>
+      <wsdl:output name="disconnectaccountResponse" message="tns:disconnectaccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewbackofusers">
+      <wsdl:input name="viewbackofusers" message="tns:viewbackofusers">
+    </wsdl:input>
+      <wsdl:output name="viewbackofusersResponse" message="tns:viewbackofusersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addservicetouserprofile">
+      <wsdl:input name="addservicetouserprofile" message="tns:addservicetouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addservicetouserprofileResponse" message="tns:addservicetouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCountmessagetoaccountprofile">
+      <wsdl:input name="addtransferCountmessagetoaccountprofile" message="tns:addtransferCountmessagetoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="addtransferCountmessagetoaccountprofileResponse" message="tns:addtransferCountmessagetoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthreadholdmessagetoaccountprofile">
+      <wsdl:input name="addthreadholdmessagetoaccountprofile" message="tns:addthreadholdmessagetoaccountprofile">
+    </wsdl:input>
+      <wsdl:output name="addthreadholdmessagetoaccountprofileResponse" message="tns:addthreadholdmessagetoaccountprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcustodyaccount">
+      <wsdl:input name="addcustodyaccount" message="tns:addcustodyaccount">
+    </wsdl:input>
+      <wsdl:output name="addcustodyaccountResponse" message="tns:addcustodyaccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setprofilerequest">
+      <wsdl:input name="setprofilerequest" message="tns:setprofilerequest">
+    </wsdl:input>
+      <wsdl:output name="setprofilerequestResponse" message="tns:setprofilerequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editbackofusers">
+      <wsdl:input name="editbackofusers" message="tns:editbackofusers">
+    </wsdl:input>
+      <wsdl:output name="editbackofusersResponse" message="tns:editbackofusersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpermissionstouserprofile">
+      <wsdl:input name="addpermissionstouserprofile" message="tns:addpermissionstouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addpermissionstouserprofileResponse" message="tns:addpermissionstouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addaccounttoexistinguser">
+      <wsdl:input name="addaccounttoexistinguser" message="tns:addaccounttoexistinguser">
+    </wsdl:input>
+      <wsdl:output name="addaccounttoexistinguserResponse" message="tns:addaccounttoexistinguserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addglobalsetting">
+      <wsdl:input name="addglobalsetting" message="tns:addglobalsetting">
+    </wsdl:input>
+      <wsdl:output name="addglobalsettingResponse" message="tns:addglobalsettingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletebackofusers">
+      <wsdl:input name="deletebackofusers" message="tns:deletebackofusers">
+    </wsdl:input>
+      <wsdl:output name="deletebackofusersResponse" message="tns:deletebackofusersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addaccount">
+      <wsdl:input name="addaccount" message="tns:addaccount">
+    </wsdl:input>
+      <wsdl:output name="addaccountResponse" message="tns:addaccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthresholdtouserprofile">
+      <wsdl:input name="addthresholdtouserprofile" message="tns:addthresholdtouserprofile">
+    </wsdl:input>
+      <wsdl:output name="addthresholdtouserprofileResponse" message="tns:addthresholdtouserprofileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="provisioningSoapBinding" type="tns:Provisioning">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="specifybalancingtypetoaccountprofile">
+      <soap:operation soapAction="specifybalancingtypetoaccountprofile" style="document"/>
+      <wsdl:input name="specifybalancingtypetoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="specifybalancingtypetoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCountmessagetouserprofile">
+      <soap:operation soapAction="addtransferCountmessagetouserprofile" style="document"/>
+      <wsdl:input name="addtransferCountmessagetouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addtransferCountmessagetouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCounttouserprofile">
+      <soap:operation soapAction="addtransferCounttouserprofile" style="document"/>
+      <wsdl:input name="addtransferCounttouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addtransferCounttouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveresetpassword">
+      <soap:operation soapAction="approveresetpassword" style="document"/>
+      <wsdl:input name="approveresetpassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="approveresetpasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isProfileauthorised">
+      <soap:operation soapAction="isProfileauthorised" style="document"/>
+      <wsdl:input name="isProfileauthorised">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isProfileauthorisedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="linkaccountrequest">
+      <soap:operation soapAction="linkaccountrequest" style="document"/>
+      <wsdl:input name="linkaccountrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="linkaccountrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendaccountholder">
+      <soap:operation soapAction="suspendaccountholder" style="document"/>
+      <wsdl:input name="suspendaccountholder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="suspendaccountholderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addloginCounttouserprofile">
+      <soap:operation soapAction="addloginCountuserprofile" style="document"/>
+      <wsdl:input name="addloginCounttouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addloginCounttouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpermissionstoaccountprofile">
+      <soap:operation soapAction="addpermissionstoaccountprofile" style="document"/>
+      <wsdl:input name="addpermissionstoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addpermissionstoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCounttoaccountprofile">
+      <soap:operation soapAction="addtransferCounttoaccountprofile" style="document"/>
+      <wsdl:input name="addtransferCounttoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addtransferCounttoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthresholdtoaccountprofile">
+      <soap:operation soapAction="addthresholdtoaccountprofile" style="document"/>
+      <wsdl:input name="addthresholdtoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addthresholdtoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addbackofusers">
+      <soap:operation soapAction="addbackofusers" style="document"/>
+      <wsdl:input name="addbackofusers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addbackofusersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetpassword">
+      <soap:operation soapAction="resetpassword" style="document"/>
+      <wsdl:input name="resetpassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resetpasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticate">
+      <soap:operation soapAction="authenticate" style="document"/>
+      <wsdl:input name="authenticate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="authenticateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setdefaultaccount">
+      <soap:operation soapAction="setdefaultaccount" style="document"/>
+      <wsdl:input name="setdefaultaccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setdefaultaccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changepassword">
+      <soap:operation soapAction="changepassword" style="document"/>
+      <wsdl:input name="changepassword">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changepasswordResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activationrequest">
+      <soap:operation soapAction="activation" style="document"/>
+      <wsdl:input name="activationrequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activationrequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addprofile">
+      <soap:operation soapAction="addprofile" style="document"/>
+      <wsdl:input name="addprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthreadholdmessagetouserprofile">
+      <soap:operation soapAction="addthreadholdmessagetouserprofile" style="document"/>
+      <wsdl:input name="addthreadholdmessagetouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addthreadholdmessagetouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfileofUser">
+      <soap:operation soapAction="getProfileofUser" style="document"/>
+      <wsdl:input name="getProfileofUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProfileofUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setparentaccount">
+      <soap:operation soapAction="setparentaccount" style="document"/>
+      <wsdl:input name="setparentaccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setparentaccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disconnectaccount">
+      <soap:operation soapAction="disconnectaccount" style="document"/>
+      <wsdl:input name="disconnectaccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="disconnectaccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registration">
+      <soap:operation soapAction="registration" style="document"/>
+      <wsdl:input name="registration">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="registrationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addservicetouserprofile">
+      <soap:operation soapAction="addservicetouserprofile" style="document"/>
+      <wsdl:input name="addservicetouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addservicetouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="viewbackofusers">
+      <soap:operation soapAction="viewbackofusers" style="document"/>
+      <wsdl:input name="viewbackofusers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="viewbackofusersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addtransferCountmessagetoaccountprofile">
+      <soap:operation soapAction="addtransferCountmessagetoaccountprofile" style="document"/>
+      <wsdl:input name="addtransferCountmessagetoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addtransferCountmessagetoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthreadholdmessagetoaccountprofile">
+      <soap:operation soapAction="addthreadholdmessagetoaccountprofile" style="document"/>
+      <wsdl:input name="addthreadholdmessagetoaccountprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addthreadholdmessagetoaccountprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcustodyaccount">
+      <soap:operation soapAction="addcustodyaccount" style="document"/>
+      <wsdl:input name="addcustodyaccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addcustodyaccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editbackofusers">
+      <soap:operation soapAction="editbackofusers" style="document"/>
+      <wsdl:input name="editbackofusers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="editbackofusersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setprofilerequest">
+      <soap:operation soapAction="setprofilerequest" style="document"/>
+      <wsdl:input name="setprofilerequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setprofilerequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpermissionstouserprofile">
+      <soap:operation soapAction="addpermissionstouserprofile" style="document"/>
+      <wsdl:input name="addpermissionstouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addpermissionstouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addaccounttoexistinguser">
+      <soap:operation soapAction="addaccounttoexistinguser" style="document"/>
+      <wsdl:input name="addaccounttoexistinguser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addaccounttoexistinguserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addglobalsetting">
+      <soap:operation soapAction="addglobalsetting" style="document"/>
+      <wsdl:input name="addglobalsetting">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addglobalsettingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletebackofusers">
+      <soap:operation soapAction="deletebackofusers" style="document"/>
+      <wsdl:input name="deletebackofusers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletebackofusersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addaccount">
+      <soap:operation soapAction="addaccount" style="document"/>
+      <wsdl:input name="addaccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addaccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addthresholdtouserprofile">
+      <soap:operation soapAction="addthresholdtouserprofile" style="document"/>
+      <wsdl:input name="addthresholdtouserprofile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addthresholdtouserprofileResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="provisioning">
+    <wsdl:port name="ProvisioningPort" binding="tns:provisioningSoapBinding">
+      <soap:address location="http://localhost:9090/ProvisioningPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
