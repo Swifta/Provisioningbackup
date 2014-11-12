@@ -14,12 +14,6 @@ import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
 import com.swifta.provisioning.utils.AccountHolderService;
-import com.swifta.sub.mats.operation.data.Provisioningclient;
-import com.swifta.sub.mats.operation.data.model.ActivationdataModel;
-import com.swifta.sub.mats.operation.data.model.DataResponse;
-import com.swifta.sub.mats.operation.data.model.LinkaccountModel;
-import com.swifta.sub.mats.operation.data.model.SetdefaultaccountModel;
-import com.swifta.sub.mats.operation.data.model.SetparentModel;
 import com.swifta.sub.mats.operation.provisioning.v1.Activationrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Addcustodyaccountrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Autoresetcounterevery;
@@ -137,17 +131,10 @@ public class ProvisioningPortImpl implements Provisioning {
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.Linkaccountresponse linkaccountresponse = new Linkaccountresponse();
 
-			Provisioningclient provisioningclient = new Provisioningclient();
-
-			LinkaccountModel linkaccountModel = new LinkaccountModel();
-			linkaccountModel.setLinkchildresourceid(userresourceid);
-			linkaccountModel
-					.setLinkparentaccountresourceid(paraentaccountresourceid);
-			DataResponse dataResponse = provisioningclient
-					.linkaccountrequest(linkaccountModel);
-
-			linkaccountresponse.setResponsemessage(dataResponse
-					.getStatusMessage());
+			linkaccountresponse.setResponsemessage(accountHolderService
+					.linkccountrequest(userresourceid,
+							paraentaccountresourceid,
+							Integer.valueOf(profileid), reason));
 
 			return linkaccountresponse;
 		} catch (java.lang.Exception ex) {
@@ -614,18 +601,9 @@ public class ProvisioningPortImpl implements Provisioning {
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.Setparentrequestresponse setparentrequestresponse = new Setparentrequestresponse();
 
-			Provisioningclient provisioningclient = new Provisioningclient();
-
-			SetparentModel setparentModel = new SetparentModel();
-
-			setparentModel.setChilduserresourceid(userresourceid);
-			setparentModel.setParentuserresourceid(paraentaccountresourceid);
-
-			DataResponse dataResponse = provisioningclient
-					.setparent(setparentModel);
-
-			setparentrequestresponse.setResponsemessage(dataResponse
-					.getStatusMessage());
+			setparentrequestresponse
+					.setResponsemessage(accountHolderService.setParentRequest(
+							userresourceid, paraentaccountresourceid));
 
 			return setparentrequestresponse;
 		} catch (java.lang.Exception ex) {
@@ -731,22 +709,10 @@ public class ProvisioningPortImpl implements Provisioning {
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.Activationrequestresponse activationrequestresponse = new Activationrequestresponse();
 
-			Provisioningclient provisioningclient = new Provisioningclient();
-
-			ActivationdataModel activationdataModel = new ActivationdataModel();
-			activationdataModel.setFirstpassword(credential.getFirstpin());
-			activationdataModel.setConfirmpassword(credential.getConfirmpin());
-			activationdataModel.setCurrency(currency);
-			activationdataModel.setIdentificationno(identificationno);
-			activationdataModel.setUsername(resourceid);
-			activationdataModel
-					.setSecurityquestionanswer(securityquestionanswer);
-
-			DataResponse dataResponse = provisioningclient
-					.activation(activationdataModel);
-
-			activationrequestresponse.setResponsemessage(dataResponse
-					.getStatusMessage());
+			activationrequestresponse.setResponsemessage(accountHolderService
+					.activateUser(resourceid, credential,
+							securityquestionanswer, identificationno,
+							bankdomainid, currency));
 
 			return activationrequestresponse;
 		} catch (java.lang.Exception ex) {
@@ -860,19 +826,10 @@ public class ProvisioningPortImpl implements Provisioning {
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.SetDefaultaccountrequestresponse setDefaultaccountrequestresponse = new SetDefaultaccountrequestresponse();
 
-			Provisioningclient provisioningclient = new Provisioningclient();
-
-			SetdefaultaccountModel setdefaultaccountModel = new SetdefaultaccountModel();
-			setdefaultaccountModel.setDchilduserresourceid(userresourceid);
-			setdefaultaccountModel
-					.setDparentaccountresourceid(paraentaccountresourceid);
-
-			DataResponse dataResponse = provisioningclient
-					.setdefaultaccount(setdefaultaccountModel);
-
-			setDefaultaccountrequestresponse.setResponsemessage(dataResponse
-					.getStatusMessage());
-
+			setDefaultaccountrequestresponse
+					.setResponsemessage(accountHolderService
+							.setdefaultaccountrequest(userresourceid,
+									paraentaccountresourceid));
 			return setDefaultaccountrequestresponse;
 		} catch (java.lang.Exception ex) {
 			ex.printStackTrace();
