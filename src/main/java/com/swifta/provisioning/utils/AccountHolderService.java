@@ -4,6 +4,9 @@ import java.rmi.RemoteException;
 
 import org.apache.log4j.Logger;
 
+import src.main.java.com.swifta.provisioning.utils.AccountHolderService;
+import src.main.java.com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
+
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Linkaccountresponse;
@@ -18,16 +21,10 @@ import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountr
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponse;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setdefaultaccountresponses;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub.SetdefaultaccountresponsesE;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentrequest;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentresponse;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.Setparentresponses;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub.SetparentresponsesE;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
 import com.swifta.sub.mats.operation.data.model.ActivationdataModel;
 import com.swifta.sub.mats.operation.data.model.DataResponse;
-import com.swifta.sub.mats.operation.data.model.Setparent;
-import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
-import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
+import com.swifta.sub.mats.operation.data.model.SetparentModel;
 
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
@@ -39,7 +36,9 @@ public class AccountHolderService {
 			String parentUsername, int profileId, String reason)
 			throws RemoteException, DataServiceFault {
 		String statusMessage = "";
-
+		provisioningClient = new Provisioningclient();
+		LinkaccountModel
+		provisioningClient.linkaccountrequest(linkaccountModel);
 		// matsStub = new MatsdataserviceStub();
 		logger.info("---------------Instantiate stub service class");
 		Linkccountrequest linkAccountRequest = new Linkccountrequest();
@@ -81,37 +80,22 @@ public class AccountHolderService {
 
 	public String setParentRequest(String childUsername, String parentUsername)
 			throws RemoteException, DataServiceFault {
-		String statusMessage = "";
-		// matsStub = new MatsdataserviceStub();
+		provisioningClient = new Provisioningclient();
 		logger.info("---------------Instantiate stub service class");
-		Setparentrequest setParentRequest = new Setparentrequest();
-		setParentRequest.setChilduserresourceid(childUsername);
-		setParentRequest.setParentuserresourceid(parentUsername);
-		logger.info("---------------After setting the parameters for setParentRequest");
-		SetparentresponsesE setParentResponses;
-		// = matsStub .setparentrequest(setParentRequest);
-		if (setParentResponses != null) {
-			logger.info("---------------After getting SetparentresponsesE class");
-			Setparentresponses parentResponses = setParentResponses
-					.getSetparentresponses();
-			if (parentResponses != null) {
-				logger.info("---------------After getting Setparentresponses class");
-				Setparentresponse[] parentResponseArray = parentResponses
-						.getSetparentresponse();
-				if (parentResponseArray != null) {
-					logger.info("---------------After getting Setparentresponse[] class");
-					for (Setparentresponse singleResponse : parentResponseArray) {
-						statusMessage = singleResponse.getStatusMessage();
-						logger.info("---------------After Iterating Setparentresponse[] class");
-					}
-				} else {
-					logger.info("---------------After getting Setparentresponse[] class and its null");
-				}
-			} else {
-				logger.info("---------------After getting Setparentresponses class and its null");
-			}
+		SetparentModel parentModel = new SetparentModel();
+		parentModel.setChilduserresourceid(childUsername);
+		parentModel.setParentuserresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for SetparentModel");
+		DataResponse dataResponse = provisioningClient.setparent(parentModel);
+		String statusMessage = "";
+
+		if (dataResponse != null) {
+			logger.info("---------------After getting dataResponse class");
+			statusMessage = dataResponse.getStatusMessage();
+
 		} else {
-			logger.info("---------------After getting SetparentresponsesE class and its null");
+			logger.info("---------------After getting dataResponse class and its null");
+
 		}
 		logger.info("---------------Returning message ::::" + statusMessage);
 		return statusMessage;
@@ -121,9 +105,23 @@ public class AccountHolderService {
 			String parentUsername) throws RemoteException, DataServiceFault {
 		provisioningClient = new Provisioningclient();
 		logger.info("---------------Instantiate stub service class");
-		Setparent setParent = new Setparent();
+		SetparentModel parentModel = new SetparentModel();
+		parentModel.setChilduserresourceid(childUsername);
+		parentModel.setParentuserresourceid(parentUsername);
+		logger.info("---------------After setting the parameters for SetparentModel");
+		DataResponse dataResponse = provisioningClient.setparent(parentModel);
+		String statusMessage = "";
 
-		provisioningClient.setparent(setparent);
+		if (dataResponse != null) {
+			logger.info("---------------After getting dataResponse class");
+			statusMessage = dataResponse.getStatusMessage();
+
+		} else {
+			logger.info("---------------After getting dataResponse class and its null");
+
+		}
+		logger.info("---------------Returning message ::::" + statusMessage);
+		return statusMessage;
 		String statusMessage = "";
 		Setdefaultaccountrequest setdefaultaccountrequest = new Setdefaultaccountrequest();
 		setdefaultaccountrequest.setChilduserresourceid(childUsername);

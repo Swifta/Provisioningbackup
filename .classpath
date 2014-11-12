@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="src/main/java/" kind="src" path=""/>
 	<classpathentry kind="src" path="src/main/java"/>
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/datastub.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/log4j-1.2.17.jar"/>
-=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/dataservicestub.jar"/>
->>>>>>> branch 'development' of https://github.com/Swifta/Provisioning.git
-	<classpathentry kind="output" path="target"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
