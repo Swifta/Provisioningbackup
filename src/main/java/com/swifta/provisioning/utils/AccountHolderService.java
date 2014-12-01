@@ -7,15 +7,15 @@ import org.apache.log4j.Logger;
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
-import com.swifta.sub.mats.operation.data.model.ActivationdataModel;
-import com.swifta.sub.mats.operation.data.model.DataResponse;
 import com.swifta.sub.mats.operation.data.model.IdentificationType;
-import com.swifta.sub.mats.operation.data.model.LinkaccountModel;
-import com.swifta.sub.mats.operation.data.model.RegistrationdataModel;
-import com.swifta.sub.mats.operation.data.model.SetdefaultaccountModel;
-import com.swifta.sub.mats.operation.data.model.SetparentModel;
 import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
 import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
+import com.swifta.sub.mats.serviceinterface.ActivationdataModel;
+import com.swifta.sub.mats.serviceinterface.DataResponse;
+import com.swifta.sub.mats.serviceinterface.LinkaccountModel;
+import com.swifta.sub.mats.serviceinterface.RegistrationdataModel;
+import com.swifta.sub.mats.serviceinterface.SetdefaultaccountModel;
+import com.swifta.sub.mats.serviceinterface.SetparentModel;
 
 public class AccountHolderService {
 	MatsdataserviceStub matsStub = null;
