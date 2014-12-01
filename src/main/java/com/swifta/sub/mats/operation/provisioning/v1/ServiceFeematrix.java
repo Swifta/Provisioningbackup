@@ -6,36 +6,32 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for autoresetcounterevery.
+ * <p>Java class for serviceFeematrix.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="autoresetcounterevery">
+ * &lt;simpleType name="serviceFeematrix">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NONE"/>
- *     &lt;enumeration value="DAY"/>
- *     &lt;enumeration value="WEEK"/>
- *     &lt;enumeration value="MONTH"/>
+ *     &lt;enumeration value="PERCENT"/>
+ *     &lt;enumeration value="FIXED"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "autoresetcounterevery")
+@XmlType(name = "serviceFeematrix")
 @XmlEnum
-public enum Autoresetcounterevery {
+public enum ServiceFeematrix {
 
-    NONE,
-    DAY,
-    WEEK,
-    MONTH;
+    PERCENT,
+    FIXED;
 
     public String value() {
         return name();
     }
 
-    public static Autoresetcounterevery fromValue(String v) {
+    public static ServiceFeematrix fromValue(String v) {
         return valueOf(v);
     }
 

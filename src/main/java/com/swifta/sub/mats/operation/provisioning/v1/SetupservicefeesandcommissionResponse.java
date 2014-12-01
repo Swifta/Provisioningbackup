@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for resetpasswordResponse complex type.
+ * <p>Java class for setupservicefeesandcommissionResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="resetpasswordResponse">
+ * &lt;complexType name="setupservicefeesandcommissionResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}servicefeeandcomissionrequestresponse" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "resetpasswordResponse", propOrder = {
+@XmlType(name = "setupservicefeesandcommissionResponse", propOrder = {
     "_return"
 })
-public class ResetpasswordResponse {
+public class SetupservicefeesandcommissionResponse {
 
     @XmlElement(name = "return")
-    protected Operationresponse _return;
+    protected Servicefeeandcomissionrequestresponse _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Operationresponse }
+     *     {@link Servicefeeandcomissionrequestresponse }
      *     
      */
-    public Operationresponse getReturn() {
+    public Servicefeeandcomissionrequestresponse getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class ResetpasswordResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Operationresponse }
+     *     {@link Servicefeeandcomissionrequestresponse }
      *     
      */
-    public void setReturn(Operationresponse value) {
+    public void setReturn(Servicefeeandcomissionrequestresponse value) {
         this._return = value;
     }
 

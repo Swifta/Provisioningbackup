@@ -41,9 +41,9 @@ public class Linkaccountresponse
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "responsemessage", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -53,8 +53,8 @@ public class Linkaccountresponse
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Responsemessage" is used by two different parts of a schema. See: 
-     * line 196 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
-     * line 106 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * line 90 of file:/Users/user/git/Provisioning/src/main/webapp/WEB-INF/wsdl/Provisioning.wsdl
+     * line 57 of file:/Users/user/git/Provisioning/src/main/webapp/WEB-INF/wsdl/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 

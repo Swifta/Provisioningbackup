@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for deletebackofusersResponse complex type.
+ * <p>Java class for activationrequestResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="deletebackofusersResponse">
+ * &lt;complexType name="activationrequestResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}activationresponse" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "deletebackofusersResponse", propOrder = {
+@XmlType(name = "activationrequestResponse", propOrder = {
     "_return"
 })
-public class DeletebackofusersResponse {
+public class ActivationrequestResponse {
 
     @XmlElement(name = "return")
-    protected Operationresponse _return;
+    protected Activationresponse _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Operationresponse }
+     *     {@link Activationresponse }
      *     
      */
-    public Operationresponse getReturn() {
+    public Activationresponse getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class DeletebackofusersResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Operationresponse }
+     *     {@link Activationresponse }
      *     
      */
-    public void setReturn(Operationresponse value) {
+    public void setReturn(Activationresponse value) {
         this._return = value;
     }
 

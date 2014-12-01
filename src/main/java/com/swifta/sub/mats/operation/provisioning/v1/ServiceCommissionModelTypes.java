@@ -6,32 +6,32 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for transfercounttype.
+ * <p>Java class for serviceCommissionModelTypes.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="transfercounttype">
+ * &lt;simpleType name="serviceCommissionModelTypes">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NUMBEROFTIMES_BASED"/>
- *     &lt;enumeration value="AMOUNT_BASED"/>
+ *     &lt;enumeration value="NOTAPPLICABLE"/>
+ *     &lt;enumeration value="TIERED"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "transfercounttype")
+@XmlType(name = "serviceCommissionModelTypes")
 @XmlEnum
-public enum Transfercounttype {
+public enum ServiceCommissionModelTypes {
 
-    NUMBEROFTIMES_BASED,
-    AMOUNT_BASED;
+    NOTAPPLICABLE,
+    TIERED;
 
     public String value() {
         return name();
     }
 
-    public static Transfercounttype fromValue(String v) {
+    public static ServiceCommissionModelTypes fromValue(String v) {
         return valueOf(v);
     }
 

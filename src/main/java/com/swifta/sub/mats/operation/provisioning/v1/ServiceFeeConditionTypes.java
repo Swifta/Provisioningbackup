@@ -6,36 +6,30 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for transactiontype.
+ * <p>Java class for serviceFeeConditionTypes.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="transactiontype">
+ * &lt;simpleType name="serviceFeeConditionTypes">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SPCASHIN"/>
- *     &lt;enumeration value="SPCASHOUT"/>
- *     &lt;enumeration value="CASHIN"/>
- *     &lt;enumeration value="CASHOUT"/>
+ *     &lt;enumeration value="TRANSACTIONTYPE"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "transactiontype")
+@XmlType(name = "serviceFeeConditionTypes")
 @XmlEnum
-public enum Transactiontype {
+public enum ServiceFeeConditionTypes {
 
-    SPCASHIN,
-    SPCASHOUT,
-    CASHIN,
-    CASHOUT;
+    TRANSACTIONTYPE;
 
     public String value() {
         return name();
     }
 
-    public static Transactiontype fromValue(String v) {
+    public static ServiceFeeConditionTypes fromValue(String v) {
         return valueOf(v);
     }
 
