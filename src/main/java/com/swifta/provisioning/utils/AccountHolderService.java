@@ -5,7 +5,6 @@ import java.rmi.RemoteException;
 import org.apache.log4j.Logger;
 
 import com.swifta.sub.mats.operation.data.DataServiceFault;
-import com.swifta.sub.mats.operation.data.MatsdataserviceStub;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
 import com.swifta.sub.mats.operation.data.model.IdentificationType;
 import com.swifta.sub.mats.operation.provisioning.v1.Credentials;
@@ -18,7 +17,7 @@ import com.swifta.sub.mats.serviceinterface.SetdefaultaccountModel;
 import com.swifta.sub.mats.serviceinterface.SetparentModel;
 
 public class AccountHolderService {
-	MatsdataserviceStub matsStub = null;
+	// MatsdataserviceStub matsStub = null;
 	Provisioningclient provisioningClient = null;
 	private static final Logger logger = Logger
 			.getLogger(AccountHolderService.class);
@@ -114,7 +113,6 @@ public class AccountHolderService {
 		activationdataModel.setUsername(username);
 		DataResponse dataResponse = provisioningClient
 				.activation(activationdataModel);
-		// matsStub = new MatsdataserviceStub();
 
 		String statusMessage = "";
 		logger.info("---------------After setting the parameters for ActivationdataModel");
