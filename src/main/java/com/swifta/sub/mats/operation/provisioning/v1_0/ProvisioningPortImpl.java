@@ -30,7 +30,10 @@ import com.swifta.sub.mats.serviceinterface.SetparentModel;
  * 
  */
 
-@javax.jws.WebService(serviceName = "provisioning", portName = "ProvisioningPort", targetNamespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", wsdlLocation = "/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl", endpointInterface = "com.swifta.sub.mats.operation.provisioning.v1_0.Provisioning")
+@javax.jws.WebService(serviceName = "provisioning", portName = "ProvisioningPort", targetNamespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0",
+// wsdlLocation =
+// "/Users/user/git/Provisioning/src/main/webapp/WEB-INF/wsdl/Provisioning.wsdl",
+wsdlLocation = "/home/ec2-user/wsdl/Provisioning.wsdl", endpointInterface = "com.swifta.sub.mats.operation.provisioning.v1_0.Provisioning")
 public class ProvisioningPortImpl implements Provisioning {
 
 	private static final Logger LOG = Logger
@@ -338,8 +341,13 @@ public class ProvisioningPortImpl implements Provisioning {
 			DataResponse daResponse = provisioningclient
 					.setupfeesandcommission(serviceFeeModel);
 
-			servicefeeandcomissionrequestresponse
-					.setStatuscode(StatusCode.COMPLETED);
+			if (daResponse.statusMessage.equals("FAILED")) {
+				servicefeeandcomissionrequestresponse
+						.setStatuscode(StatusCode.FAILED);
+			} else {
+				servicefeeandcomissionrequestresponse
+						.setStatuscode(StatusCode.COMPLETED);
+			}
 			servicefeeandcomissionrequestresponse
 					.setResponsemessage(daResponse.statusDescription);
 
