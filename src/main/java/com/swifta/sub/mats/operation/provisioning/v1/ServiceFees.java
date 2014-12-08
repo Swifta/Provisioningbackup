@@ -44,11 +44,11 @@ public class ServiceFees
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "transactiontypeid", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "servicefee", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "maximumamount", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "minimumamount", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "servicefeetype", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "transactiontypeid", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "servicefeetype", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "servicefee", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "minimumamount", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -58,8 +58,8 @@ public class ServiceFees
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Transactiontypeid" is used by two different parts of a schema. See: 
-     * line 249 of file:/Users/user/git/Provisioning/src/main/webapp/WEB-INF/wsdl/Provisioning.wsdl
-     * line 260 of file:/Users/user/git/Provisioning/src/main/webapp/WEB-INF/wsdl/Provisioning.wsdl
+     * line 249 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * line 260 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 
@@ -80,8 +80,8 @@ public class ServiceFees
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
+     * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * {@link JAXBElement }{@code <}{@link ServiceFeematrix }{@code >}
