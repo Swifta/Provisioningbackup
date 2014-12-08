@@ -3,28 +3,27 @@ package com.swifta.provisioning.utils;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 import com.swifta.sub.mats.operation.data.DataServiceFault;
 import com.swifta.sub.mats.operation.data.Provisioningclient;
-import com.swifta.sub.mats.operation.data.model.IdentificationType;
 import com.swifta.sub.mats.operation.provisioning.v1.Activationresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Linkaccountresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Registrationrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Securityquestions;
+import com.swifta.sub.mats.operation.provisioning.v1.ServiceCommission;
+import com.swifta.sub.mats.operation.provisioning.v1.ServiceFeeModel;
+import com.swifta.sub.mats.operation.provisioning.v1.ServiceFeematrix;
+import com.swifta.sub.mats.operation.provisioning.v1.ServiceFees;
 import com.swifta.sub.mats.operation.provisioning.v1.Servicefeeandcomissionrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.SetDefaultaccountrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.Setparentrequestresponse;
 import com.swifta.sub.mats.operation.provisioning.v1.StatusCode;
 import com.swifta.sub.mats.serviceinterface.ActivationdataModel;
 import com.swifta.sub.mats.serviceinterface.DataResponse;
+import com.swifta.sub.mats.serviceinterface.IdentificationType;
 import com.swifta.sub.mats.serviceinterface.LinkaccountModel;
 import com.swifta.sub.mats.serviceinterface.RegistrationdataModel;
-import com.swifta.sub.mats.serviceinterface.ServiceCommission;
-import com.swifta.sub.mats.serviceinterface.ServiceFeeModel;
-import com.swifta.sub.mats.serviceinterface.ServiceFeematrix;
-import com.swifta.sub.mats.serviceinterface.ServiceFees;
 import com.swifta.sub.mats.serviceinterface.SetdefaultaccountModel;
 import com.swifta.sub.mats.serviceinterface.SetparentModel;
 
@@ -32,7 +31,7 @@ public class AccountHolderService {
 	// MatsdataserviceStub matsStub = null;
 	Provisioningclient provisioningClient = null;
 	private static final Logger logger = Logger
-			.getLogger(AccountHolderService.class);
+			.getLogger(AccountHolderService.class.getName());
 
 	public com.swifta.sub.mats.operation.provisioning.v1.Servicefeeandcomissionrequestresponse setupservicefeesandcommission(
 			java.lang.String spaccountholderid,
@@ -63,10 +62,10 @@ public class AccountHolderService {
 					.getMinimumamount());
 			parseServiceCommission
 					.setServicecommissioncondition(newServiceCommission
-							.getServicecommissioncondition().toString());
+							.getServicecommissioncondition());
 			parseServiceCommission
 					.setServicecommissionmodeltype(newServiceCommission
-							.getServicecommissionmodeltype().toString());
+							.getServicecommissionmodeltype());
 			parseServiceCommission.setTransactiontypeid(newServiceCommission
 					.getTransactiontypeid());
 
