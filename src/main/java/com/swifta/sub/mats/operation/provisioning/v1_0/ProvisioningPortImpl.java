@@ -210,7 +210,7 @@ public class ProvisioningPortImpl implements Provisioning {
 			registration.setMiddlename(accountholderdetails.getMiddlename());
 			registration.setSuffix(accountholderdetails.getSuffix());
 			registration.setPrefix(accountholderdetails.getPrefix());
-			registration.setGenderid(accountholderdetails.getGenderid());
+			registration.setGender(accountholderdetails.getGender().toString());
 			registration.setCountryid(accountholderdetails.getCountryid());
 			registration.setCountrystateid(accountholderdetails.getStateid());
 			registration.setCountrystatelgaid(accountholderdetails.getLgaid());
@@ -228,6 +228,9 @@ public class ProvisioningPortImpl implements Provisioning {
 			registration.setClearingnumber(clearingnumber);
 			registration.setCurrencyid(new Integer(currencyid));
 			registration.setTermscondition(termscondition);
+			registration.setStatusMessage("1");
+			registration.setReason("1");
+			registration.setTransactionid(-1);
 
 			for (Securityquestions securityquestions2 : securityquestions) {
 				registration.setSecurityquestions(securityquestions2

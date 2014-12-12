@@ -24,7 +24,7 @@ public class RegistrationdataModel {
 	public String Middlename;
 	public String Suffix;
 	public String Prefix;
-	public int Genderid;
+	public String Gender;
 	public int Countryid;
 	public int Countrystateid;
 	public int Countrystatelgaid;
@@ -44,11 +44,9 @@ public class RegistrationdataModel {
 	public String Securityquestions;
 	public String Securityquestionanswer;
 	public String StatusMessage;
+	public String Reason;
 	private int Currency;
-
-	public RegistrationdataModel() {
-		super();
-	}
+	public int Transactionid;
 
 	public RegistrationdataModel(String primarycontactname,
 			String primarycontactmobilenumber,
@@ -59,14 +57,14 @@ public class RegistrationdataModel {
 			String expirydate, String isssuer, String issueDate,
 			String streetaddress, String postalCode, String city,
 			String province, String firstname, String lastname,
-			String middlename, String suffix, String prefix, int genderid,
+			String middlename, String suffix, String prefix, String gender,
 			int countryid, int countrystateid, int countrystatelgaid,
 			int languageid, String occupation, String employer,
 			String dateofbirth, String username, String msisdn, String email,
 			int profileid, int bankcodeid, String bankaccount,
 			String clearingnumber, int currencyid, String termscondition,
 			String securityquestions, String securityquestionanswer,
-			String statusMessage, int currency) {
+			String statusMessage, String reason, int currency, int transactionid) {
 		super();
 		Primarycontactname = primarycontactname;
 		Primarycontactmobilenumber = primarycontactmobilenumber;
@@ -90,7 +88,7 @@ public class RegistrationdataModel {
 		Middlename = middlename;
 		Suffix = suffix;
 		Prefix = prefix;
-		Genderid = genderid;
+		Gender = gender;
 		Countryid = countryid;
 		Countrystateid = countrystateid;
 		Countrystatelgaid = countrystatelgaid;
@@ -110,7 +108,21 @@ public class RegistrationdataModel {
 		Securityquestions = securityquestions;
 		Securityquestionanswer = securityquestionanswer;
 		StatusMessage = statusMessage;
+		Reason = reason;
 		Currency = currency;
+		Transactionid = transactionid;
+	}
+
+	public int getTransactionid() {
+		return Transactionid;
+	}
+
+	public void setTransactionid(int transactionid) {
+		Transactionid = transactionid;
+	}
+
+	public RegistrationdataModel() {
+		super();
 	}
 
 	public String getPrimarycontactname() {
@@ -291,12 +303,12 @@ public class RegistrationdataModel {
 		Prefix = prefix;
 	}
 
-	public int getGenderid() {
-		return Genderid;
+	public String getGender() {
+		return Gender;
 	}
 
-	public void setGenderid(int genderid) {
-		Genderid = genderid;
+	public void setGender(String gender) {
+		Gender = gender;
 	}
 
 	public int getCountryid() {
@@ -457,6 +469,14 @@ public class RegistrationdataModel {
 
 	public void setCurrency(int currency) {
 		Currency = currency;
+	}
+
+	public String getReason() {
+		return Reason;
+	}
+
+	public void setReason(String reason) {
+		Reason = reason;
 	}
 
 }
