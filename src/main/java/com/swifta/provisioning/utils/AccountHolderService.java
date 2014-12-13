@@ -195,7 +195,7 @@ public class AccountHolderService {
 		registration.setMiddlename(accountholderdetails.getMiddlename());
 		registration.setSuffix(accountholderdetails.getSuffix());
 		registration.setPrefix(accountholderdetails.getPrefix());
-		registration.setGenderid(accountholderdetails.getGenderid());
+		registration.setGender(accountholderdetails.getGender().toString());
 		registration.setCountryid(accountholderdetails.getCountryid());
 		registration.setCountrystateid(accountholderdetails.getStateid());
 		registration.setCountrystatelgaid(accountholderdetails.getLgaid());
