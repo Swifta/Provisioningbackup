@@ -45,10 +45,10 @@ public class ServiceFees
 
     @XmlElementRefs({
         @XmlElementRef(name = "maximumamount", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "transactiontypeid", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "servicefeetype", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "servicefee", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "minimumamount", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "servicefeetype", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "minimumamount", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "transactiontypeid", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -80,11 +80,11 @@ public class ServiceFees
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link ServiceFeematrix }{@code >}
+     * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
      * {@link JAXBElement }{@code <}{@link Integer }{@code >}
      * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
-     * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
-     * {@link JAXBElement }{@code <}{@link ServiceFeematrix }{@code >}
      * 
      * 
      */

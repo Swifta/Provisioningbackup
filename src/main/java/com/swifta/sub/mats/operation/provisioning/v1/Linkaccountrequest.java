@@ -16,10 +16,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userresourceid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="initiatinguserresourceid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="childuserresourceid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="profileid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="paraentaccountresourceid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="reason" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,40 +30,64 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "linkaccountrequest", propOrder = {
-    "userresourceid",
+    "initiatinguserresourceid",
+    "childuserresourceid",
     "profileid",
-    "paraentaccountresourceid",
-    "reason"
+    "paraentaccountresourceid"
 })
 public class Linkaccountrequest {
 
-    protected String userresourceid;
+    protected String initiatinguserresourceid;
+    protected String childuserresourceid;
     protected String profileid;
     protected String paraentaccountresourceid;
-    protected String reason;
 
     /**
-     * Gets the value of the userresourceid property.
+     * Gets the value of the initiatinguserresourceid property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUserresourceid() {
-        return userresourceid;
+    public String getInitiatinguserresourceid() {
+        return initiatinguserresourceid;
     }
 
     /**
-     * Sets the value of the userresourceid property.
+     * Sets the value of the initiatinguserresourceid property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUserresourceid(String value) {
-        this.userresourceid = value;
+    public void setInitiatinguserresourceid(String value) {
+        this.initiatinguserresourceid = value;
+    }
+
+    /**
+     * Gets the value of the childuserresourceid property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getChilduserresourceid() {
+        return childuserresourceid;
+    }
+
+    /**
+     * Sets the value of the childuserresourceid property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setChilduserresourceid(String value) {
+        this.childuserresourceid = value;
     }
 
     /**
@@ -112,30 +136,6 @@ public class Linkaccountrequest {
      */
     public void setParaentaccountresourceid(String value) {
         this.paraentaccountresourceid = value;
-    }
-
-    /**
-     * Gets the value of the reason property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getReason() {
-        return reason;
-    }
-
-    /**
-     * Sets the value of the reason property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReason(String value) {
-        this.reason = value;
     }
 
 }

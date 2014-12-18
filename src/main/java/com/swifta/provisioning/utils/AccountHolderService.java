@@ -347,7 +347,7 @@ public class AccountHolderService {
 		logger.info("---------------Instantiate stub service class");
 
 		LinkaccountModel linkaccountModel = new LinkaccountModel();
-		linkaccountModel.setReason(reason);
+		// linkaccountModel.setReason(reason);
 		linkaccountModel.setProfileid(Integer.valueOf(profileid));
 		linkaccountModel.setLinkchildresourceid(userresourceid);
 		linkaccountModel

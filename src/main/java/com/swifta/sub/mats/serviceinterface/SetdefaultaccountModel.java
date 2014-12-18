@@ -2,6 +2,7 @@ package com.swifta.sub.mats.serviceinterface;
 
 public class SetdefaultaccountModel {
 
+	public String initiatinguserresourceid;
 	public String dchilduserresourceid;
 	public String dparentaccountresourceid;
 
@@ -9,9 +10,10 @@ public class SetdefaultaccountModel {
 		super();
 	}
 
-	public SetdefaultaccountModel(String dchilduserresourceid,
-			String dparentaccountresourceid) {
+	public SetdefaultaccountModel(String initiatinguserresourceid,
+			String dchilduserresourceid, String dparentaccountresourceid) {
 		super();
+		this.initiatinguserresourceid = initiatinguserresourceid;
 		this.dchilduserresourceid = dchilduserresourceid;
 		this.dparentaccountresourceid = dparentaccountresourceid;
 	}
@@ -30,6 +32,14 @@ public class SetdefaultaccountModel {
 
 	public void setDparentaccountresourceid(String dparentaccountresourceid) {
 		this.dparentaccountresourceid = dparentaccountresourceid;
+	}
+
+	public String getInitiatinguserresourceid() {
+		return initiatinguserresourceid;
+	}
+
+	public void setInitiatinguserresourceid(String initiatinguserresourceid) {
+		this.initiatinguserresourceid = initiatinguserresourceid;
 	}
 
 }

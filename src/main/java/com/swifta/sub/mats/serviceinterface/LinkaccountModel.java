@@ -4,19 +4,20 @@ public class LinkaccountModel {
 	public String linkchildresourceid;
 	public String linkparentaccountresourceid;
 	public int profileid;
-	public String reason;
+	public String initiatinguserresourceid;
 
 	public LinkaccountModel() {
 		super();
 	}
 
 	public LinkaccountModel(String linkchildresourceid,
-			String linkparentaccountresourceid, int profileid, String reason) {
+			String linkparentaccountresourceid, int profileid,
+			String initiatinguserresourceid) {
 		super();
 		this.linkchildresourceid = linkchildresourceid;
 		this.linkparentaccountresourceid = linkparentaccountresourceid;
 		this.profileid = profileid;
-		this.reason = reason;
+		this.initiatinguserresourceid = initiatinguserresourceid;
 
 	}
 
@@ -45,12 +46,12 @@ public class LinkaccountModel {
 		this.profileid = profileid;
 	}
 
-	public String getReason() {
-		return reason;
+	public String getinitiatinguserresourceid() {
+		return initiatinguserresourceid;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
+	public void setinitiatinguserresourceid(String initiatinguserresourceid) {
+		this.initiatinguserresourceid = initiatinguserresourceid;
 	}
 
 }

@@ -41,9 +41,9 @@ public class Linkaccountresponse
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "responsemessage", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 

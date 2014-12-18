@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="minimumamount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="maximumamount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="commissionfee" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="commissionfeetype" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="commissionfeetype" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}serviceFeematrix" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -53,7 +53,8 @@ public class ServiceCommission {
     protected BigDecimal minimumamount;
     protected BigDecimal maximumamount;
     protected BigDecimal commissionfee;
-    protected String commissionfeetype;
+    @XmlSchemaType(name = "string")
+    protected ServiceFeematrix commissionfeetype;
 
     /**
      * Gets the value of the servicecommissioncondition property.
@@ -196,10 +197,10 @@ public class ServiceCommission {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ServiceFeematrix }
      *     
      */
-    public String getCommissionfeetype() {
+    public ServiceFeematrix getCommissionfeetype() {
         return commissionfeetype;
     }
 
@@ -208,10 +209,10 @@ public class ServiceCommission {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ServiceFeematrix }
      *     
      */
-    public void setCommissionfeetype(String value) {
+    public void setCommissionfeetype(ServiceFeematrix value) {
         this.commissionfeetype = value;
     }
 

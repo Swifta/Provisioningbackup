@@ -41,9 +41,9 @@ public class Addcustodyaccountrequestresponse
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -75,8 +75,8 @@ public class Addcustodyaccountrequestresponse
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
+     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
      * 
      * 
