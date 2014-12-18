@@ -420,6 +420,8 @@ public class ProvisioningPortImpl implements Provisioning {
 		try {
 			com.swifta.sub.mats.operation.provisioning.v1.Authenticationresponse authenticationresponse = new Authenticationresponse();
 
+			authenticationresponse.setResponsemessage("");
+
 			return authenticationresponse;
 		} catch (java.lang.Exception ex) {
 			ex.printStackTrace();
