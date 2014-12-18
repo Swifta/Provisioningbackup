@@ -1,9 +1,13 @@
 
 package com.swifta.sub.mats.operation.provisioning.v1;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,8 +21,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://swifta.com/sub/mats/operation/provisioning/v1.0}operationresponse">
  *       &lt;sequence>
- *         &lt;element name="ResponseMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extension" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}extension" minOccurs="0"/>
+ *         &lt;element name="responsemessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="statuscode" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}statusCode" minOccurs="0"/>
+ *         &lt;element name="extensionparameters" type="{http://swifta.com/sub/mats/operation/provisioning/v1.0}parameterExtension" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -29,63 +34,58 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "authenticationresponse", propOrder = {
-    "responseMessage",
-    "extension"
+    "rest"
 })
 public class Authenticationresponse
     extends Operationresponse
 {
 
-    @XmlElement(name = "ResponseMessage")
-    protected String responseMessage;
-    protected Extension extension;
+    @XmlElementRefs({
+        @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "responsemessage", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false)
+    })
+    protected List<JAXBElement<?>> rest;
 
     /**
-     * Gets the value of the responseMessage property.
+     * Gets the rest of the content model. 
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getResponseMessage() {
-        return responseMessage;
-    }
-
-    /**
-     * Sets the value of the responseMessage property.
+     * <p>
+     * You are getting this "catch-all" property because of the following reason: 
+     * The field name "Responsemessage" is used by two different parts of a schema. See: 
+     * line 157 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * line 57 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * <p>
+     * To get rid of this property, apply a property customization to one 
+     * of both of the following declarations to change their names: 
+     * Gets the value of the rest property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setResponseMessage(String value) {
-        this.responseMessage = value;
-    }
-
-    /**
-     * Gets the value of the extension property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the rest property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Extension }
-     *     
-     */
-    public Extension getExtension() {
-        return extension;
-    }
-
-    /**
-     * Sets the value of the extension property.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRest().add(newItem);
+     * </pre>
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Extension }
-     *     
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
+     * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
+     * 
+     * 
      */
-    public void setExtension(Extension value) {
-        this.extension = value;
+    public List<JAXBElement<?>> getRest() {
+        if (rest == null) {
+            rest = new ArrayList<JAXBElement<?>>();
+        }
+        return this.rest;
     }
 
 }

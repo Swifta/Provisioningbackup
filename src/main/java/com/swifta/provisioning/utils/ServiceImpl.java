@@ -194,4 +194,11 @@ public class ServiceImpl {
 
 		return dataResponse;
 	}
+
+	public static DataResponse authenticate(java.lang.String resourceid,
+			java.lang.String password) {
+
+		return null;
+
+	}
 }

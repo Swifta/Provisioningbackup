@@ -25,6 +25,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SetparentrequestresponseExtensionparameters_QNAME = new QName("", "extensionparameters");
+    private final static QName _SetparentrequestresponseResponsemessage_QNAME = new QName("", "responsemessage");
+    private final static QName _SetparentrequestresponseStatuscode_QNAME = new QName("", "statuscode");
     private final static QName _GetProfileofUserResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "getProfileofUserResponse");
     private final static QName _RegistrationResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "registrationResponse");
     private final static QName _SetdefaultaccountResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "setdefaultaccountResponse");
@@ -53,10 +56,7 @@ public class ObjectFactory {
     private final static QName _Suspendaccountholder_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "suspendaccountholder");
     private final static QName _LinkaccountrequestResponse_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "linkaccountrequestResponse");
     private final static QName _Addaccounttoexistinguser_QNAME = new QName("http://swifta.com/sub/mats/operation/provisioning/v1.0", "addaccounttoexistinguser");
-    private final static QName _LinkaccountresponseExtensionparameters_QNAME = new QName("", "extensionparameters");
-    private final static QName _LinkaccountresponseResponsemessage_QNAME = new QName("", "responsemessage");
-    private final static QName _LinkaccountresponseStatuscode_QNAME = new QName("", "statuscode");
-    private final static QName _AddaccounttoexistinguserrequestresponseAccountnumber_QNAME = new QName("", "accountnumber");
+    private final static QName _AddaccountrequestresponseAccountnumber_QNAME = new QName("", "accountnumber");
     private final static QName _ServiceFeesMinimumamount_QNAME = new QName("", "minimumamount");
     private final static QName _ServiceFeesTransactiontypeid_QNAME = new QName("", "transactiontypeid");
     private final static QName _ServiceFeesServicefeetype_QNAME = new QName("", "servicefeetype");
@@ -495,6 +495,33 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Setparentrequestresponse.class)
+    public JAXBElement<ParameterExtension> createSetparentrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Setparentrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Setparentrequestresponse.class)
+    public JAXBElement<String> createSetparentrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Setparentrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Setparentrequestresponse.class)
+    public JAXBElement<StatusCode> createSetparentrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Setparentrequestresponse.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetProfileofUserResponse }{@code >}}
      * 
      */
@@ -750,108 +777,81 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Linkaccountresponse.class)
-    public JAXBElement<ParameterExtension> createLinkaccountresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Linkaccountresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Authenticationresponse.class)
+    public JAXBElement<ParameterExtension> createAuthenticationresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Authenticationresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Linkaccountresponse.class)
-    public JAXBElement<String> createLinkaccountresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Linkaccountresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Authenticationresponse.class)
+    public JAXBElement<String> createAuthenticationresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Authenticationresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Linkaccountresponse.class)
-    public JAXBElement<StatusCode> createLinkaccountresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Linkaccountresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Authenticationresponse.class)
+    public JAXBElement<StatusCode> createAuthenticationresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Authenticationresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Servicefeeandcomissionrequestresponse.class)
-    public JAXBElement<ParameterExtension> createServicefeeandcomissionrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Servicefeeandcomissionrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccountrequestresponse.class)
+    public JAXBElement<ParameterExtension> createAddaccountrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccountrequestresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Servicefeeandcomissionrequestresponse.class)
-    public JAXBElement<String> createServicefeeandcomissionrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Servicefeeandcomissionrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addaccountrequestresponse.class)
+    public JAXBElement<String> createAddaccountrequestresponseAccountnumber(String value) {
+        return new JAXBElement<String>(_AddaccountrequestresponseAccountnumber_QNAME, String.class, Addaccountrequestresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Servicefeeandcomissionrequestresponse.class)
-    public JAXBElement<StatusCode> createServicefeeandcomissionrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Servicefeeandcomissionrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccountrequestresponse.class)
+    public JAXBElement<StatusCode> createAddaccountrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Addaccountrequestresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccounttoexistinguserrequestresponse.class)
-    public JAXBElement<ParameterExtension> createAddaccounttoexistinguserrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccounttoexistinguserrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addcustodyaccountrequestresponse.class)
+    public JAXBElement<ParameterExtension> createAddcustodyaccountrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addcustodyaccountrequestresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addaccounttoexistinguserrequestresponse.class)
-    public JAXBElement<String> createAddaccounttoexistinguserrequestresponseAccountnumber(String value) {
-        return new JAXBElement<String>(_AddaccounttoexistinguserrequestresponseAccountnumber_QNAME, String.class, Addaccounttoexistinguserrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addcustodyaccountrequestresponse.class)
+    public JAXBElement<String> createAddcustodyaccountrequestresponseAccountnumber(String value) {
+        return new JAXBElement<String>(_AddaccountrequestresponseAccountnumber_QNAME, String.class, Addcustodyaccountrequestresponse.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccounttoexistinguserrequestresponse.class)
-    public JAXBElement<StatusCode> createAddaccounttoexistinguserrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Addaccounttoexistinguserrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Registrationrequestresponse.class)
-    public JAXBElement<ParameterExtension> createRegistrationrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Registrationrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Registrationrequestresponse.class)
-    public JAXBElement<String> createRegistrationrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Registrationrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Registrationrequestresponse.class)
-    public JAXBElement<StatusCode> createRegistrationrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Registrationrequestresponse.class, value);
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addcustodyaccountrequestresponse.class)
+    public JAXBElement<StatusCode> createAddcustodyaccountrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Addcustodyaccountrequestresponse.class, value);
     }
 
     /**
@@ -860,7 +860,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<ParameterExtension> createSuspendaccountholderrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Suspendaccountholderrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Suspendaccountholderrequestresponse.class, value);
     }
 
     /**
@@ -869,7 +869,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "responsemessage", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<String> createSuspendaccountholderrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Suspendaccountholderrequestresponse.class, value);
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Suspendaccountholderrequestresponse.class, value);
     }
 
     /**
@@ -878,7 +878,61 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = Suspendaccountholderrequestresponse.class)
     public JAXBElement<StatusCode> createSuspendaccountholderrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Suspendaccountholderrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Suspendaccountholderrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<ParameterExtension> createDisconnectaccountrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<String> createDisconnectaccountrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Disconnectaccountrequestresponse.class)
+    public JAXBElement<StatusCode> createDisconnectaccountrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Disconnectaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Linkaccountresponse.class)
+    public JAXBElement<ParameterExtension> createLinkaccountresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Linkaccountresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Linkaccountresponse.class)
+    public JAXBElement<String> createLinkaccountresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Linkaccountresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Linkaccountresponse.class)
+    public JAXBElement<StatusCode> createLinkaccountresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Linkaccountresponse.class, value);
     }
 
     /**
@@ -930,117 +984,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccountrequestresponse.class)
-    public JAXBElement<ParameterExtension> createAddaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addaccountrequestresponse.class)
-    public JAXBElement<String> createAddaccountrequestresponseAccountnumber(String value) {
-        return new JAXBElement<String>(_AddaccounttoexistinguserrequestresponseAccountnumber_QNAME, String.class, Addaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccountrequestresponse.class)
-    public JAXBElement<StatusCode> createAddaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Addaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<ParameterExtension> createDisconnectaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Disconnectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<String> createDisconnectaccountrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Disconnectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Disconnectaccountrequestresponse.class)
-    public JAXBElement<StatusCode> createDisconnectaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Disconnectaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addcustodyaccountrequestresponse.class)
-    public JAXBElement<ParameterExtension> createAddcustodyaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Addcustodyaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addcustodyaccountrequestresponse.class)
-    public JAXBElement<String> createAddcustodyaccountrequestresponseAccountnumber(String value) {
-        return new JAXBElement<String>(_AddaccounttoexistinguserrequestresponseAccountnumber_QNAME, String.class, Addcustodyaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addcustodyaccountrequestresponse.class)
-    public JAXBElement<StatusCode> createAddcustodyaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Addcustodyaccountrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Setparentrequestresponse.class)
-    public JAXBElement<ParameterExtension> createSetparentrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, Setparentrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Setparentrequestresponse.class)
-    public JAXBElement<String> createSetparentrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, Setparentrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "statuscode", scope = Setparentrequestresponse.class)
-    public JAXBElement<StatusCode> createSetparentrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, Setparentrequestresponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "", name = "extensionparameters", scope = SetDefaultaccountrequestresponse.class)
     public JAXBElement<ParameterExtension> createSetDefaultaccountrequestresponseExtensionparameters(ParameterExtension value) {
-        return new JAXBElement<ParameterExtension>(_LinkaccountresponseExtensionparameters_QNAME, ParameterExtension.class, SetDefaultaccountrequestresponse.class, value);
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, SetDefaultaccountrequestresponse.class, value);
     }
 
     /**
@@ -1049,7 +995,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "responsemessage", scope = SetDefaultaccountrequestresponse.class)
     public JAXBElement<String> createSetDefaultaccountrequestresponseResponsemessage(String value) {
-        return new JAXBElement<String>(_LinkaccountresponseResponsemessage_QNAME, String.class, SetDefaultaccountrequestresponse.class, value);
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, SetDefaultaccountrequestresponse.class, value);
     }
 
     /**
@@ -1058,7 +1004,88 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "", name = "statuscode", scope = SetDefaultaccountrequestresponse.class)
     public JAXBElement<StatusCode> createSetDefaultaccountrequestresponseStatuscode(StatusCode value) {
-        return new JAXBElement<StatusCode>(_LinkaccountresponseStatuscode_QNAME, StatusCode.class, SetDefaultaccountrequestresponse.class, value);
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, SetDefaultaccountrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Addaccounttoexistinguserrequestresponse.class)
+    public JAXBElement<ParameterExtension> createAddaccounttoexistinguserrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Addaccounttoexistinguserrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "accountnumber", scope = Addaccounttoexistinguserrequestresponse.class)
+    public JAXBElement<String> createAddaccounttoexistinguserrequestresponseAccountnumber(String value) {
+        return new JAXBElement<String>(_AddaccountrequestresponseAccountnumber_QNAME, String.class, Addaccounttoexistinguserrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Addaccounttoexistinguserrequestresponse.class)
+    public JAXBElement<StatusCode> createAddaccounttoexistinguserrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Addaccounttoexistinguserrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Servicefeeandcomissionrequestresponse.class)
+    public JAXBElement<ParameterExtension> createServicefeeandcomissionrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Servicefeeandcomissionrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Servicefeeandcomissionrequestresponse.class)
+    public JAXBElement<String> createServicefeeandcomissionrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Servicefeeandcomissionrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Servicefeeandcomissionrequestresponse.class)
+    public JAXBElement<StatusCode> createServicefeeandcomissionrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Servicefeeandcomissionrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "extensionparameters", scope = Registrationrequestresponse.class)
+    public JAXBElement<ParameterExtension> createRegistrationrequestresponseExtensionparameters(ParameterExtension value) {
+        return new JAXBElement<ParameterExtension>(_SetparentrequestresponseExtensionparameters_QNAME, ParameterExtension.class, Registrationrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "responsemessage", scope = Registrationrequestresponse.class)
+    public JAXBElement<String> createRegistrationrequestresponseResponsemessage(String value) {
+        return new JAXBElement<String>(_SetparentrequestresponseResponsemessage_QNAME, String.class, Registrationrequestresponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "statuscode", scope = Registrationrequestresponse.class)
+    public JAXBElement<StatusCode> createRegistrationrequestresponseStatuscode(StatusCode value) {
+        return new JAXBElement<StatusCode>(_SetparentrequestresponseStatuscode_QNAME, StatusCode.class, Registrationrequestresponse.class, value);
     }
 
 }

@@ -53,7 +53,7 @@ public class Addcustodyaccountrequestresponse
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Statuscode" is used by two different parts of a schema. See: 
-     * line 428 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * line 429 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
      * line 58 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
@@ -76,8 +76,8 @@ public class Addcustodyaccountrequestresponse
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
-     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
      * 
      * 
      */

@@ -41,9 +41,9 @@ public class Addaccountrequestresponse
 {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "statuscode", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "accountnumber", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "extensionparameters", type = JAXBElement.class, required = false)
     })
     protected List<JAXBElement<?>> rest;
 
@@ -53,7 +53,7 @@ public class Addaccountrequestresponse
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "Statuscode" is used by two different parts of a schema. See: 
-     * line 475 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
+     * line 476 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
      * line 58 of file:/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl
      * <p>
      * To get rid of this property, apply a property customization to one 
@@ -75,8 +75,8 @@ public class Addaccountrequestresponse
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link ParameterExtension }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link JAXBElement }{@code <}{@link StatusCode }{@code >}
      * 
      * 
