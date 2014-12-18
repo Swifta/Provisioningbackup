@@ -21,7 +21,10 @@ import com.swifta.sub.mats.serviceinterface.DataResponse;
  * 
  */
 
-@javax.jws.WebService(serviceName = "provisioning", portName = "ProvisioningPort", targetNamespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0", wsdlLocation = "/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl", endpointInterface = "com.swifta.sub.mats.operation.provisioning.v1_0.Provisioning")
+@javax.jws.WebService(serviceName = "provisioning", portName = "ProvisioningPort", targetNamespace = "http://swifta.com/sub/mats/operation/provisioning/v1.0",
+// wsdlLocation =
+// "/Users/modupealadeojebi/Documents/java2wsdl/version1/PaymentSystemAggregator/target/generated/wsdl/Provisioning.wsdl",
+wsdlLocation = "/home/ec2-user/wsdl/Provisioning.wsdl", endpointInterface = "com.swifta.sub.mats.operation.provisioning.v1_0.Provisioning")
 public class ProvisioningPortImpl implements Provisioning {
 
 	private static final Logger LOG = Logger
